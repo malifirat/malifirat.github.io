@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simplified re-entry model connecting atmospheric conditions, ballistic descent, stagnation-point heating, heat-flux distribution, surface radiation, and ablative mass loss.">
+  <meta name="theme-color" content="#090c11">
+  <title>Spacecraft re-entry thermal model | Mehmet Firat</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Mehmet Firat home">Mehmet <span>Firat</span></a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#about">About</a>
+        <a href="../assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="nav-cta" href="https://www.linkedin.com/in/mehmetafirat" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="project-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#work">← Back to selected work</a>
+        <div class="project-meta">Thermal-fluids · numerical modeling · 2026</div>
+        <h1>Spacecraft re-entry thermal model</h1>
+        <p class="lede">A simplified re-entry model connecting atmospheric conditions, ballistic descent, stagnation-point heating, heat-flux distribution, surface radiation, and ablative mass loss.</p>
+        <div class="tag-row"><span class="tag">MATLAB</span><span class="tag">Thermal-fluids</span><span class="tag">Sutton–Graves</span><span class="tag">Heat transfer</span><span class="tag">Ablation modeling</span></div>
+        <div class="hero-actions"><a class="button primary" href="../assets/docs/Spacecraft_Reentry_Report.pdf" target="_blank" rel="noopener">Download full report</a></div>
+        <div class="project-media"><img src="../assets/images/spacecraft-hero.webp" alt="Plots showing aerodynamic heating and heat-shield ablation during simulated spacecraft re-entry"></div>
+        <div class="project-facts"><div class="fact"><span>Scope</span><strong>2-week class project</strong></div><div class="fact"><span>Initial speed</span><strong>7800 m/s</strong></div><div class="fact"><span>Peak heat-map altitude</span><strong>42.7 km</strong></div><div class="fact"><span>Predicted ablation</span><strong>~0.7 kg</strong></div></div>
+      </div>
+    </section>
+    <section class="section"><div class="container story-grid"><div><h2>Model architecture</h2></div><div class="story-copy"><p>The project intentionally used a first-order model rather than full CFD. The analysis moved through five linked steps:</p><ul><li>Layered atmospheric temperature, pressure, and density versus altitude.</li><li>A simplified unpowered planar re-entry trajectory.</li><li>Sutton–Graves stagnation-point convective heating.</li><li>Lee’s heat-transfer distribution across the curved heat shield.</li><li>A surface energy balance that separated radiation from simplified ablative mass loss.</li></ul></div></div></section><section class="section"><div class="container story-grid"><div><h2>Heating behavior</h2></div><div class="story-copy"><p>The model captured the competition between increasing atmospheric density and decreasing vehicle speed during descent. Because the Sutton–Graves relation scales strongly with velocity, the heating profile peaks before the vehicle reaches the densest part of the atmosphere.</p><div class="callout">The heat-flux map in the report identifies peak heating at approximately <strong>42.7 km altitude</strong>, with the highest local heating near the center of the curved heat shield.</div></div></div></section><section class="section"><div class="container story-grid"><div><h2>Ablation result</h2></div><div class="story-copy"><p>After accounting for outgoing radiation, the remaining positive net heat flux was converted into a simplified mass-loss rate using an effective heat of ablation. The model summed the mass loss across 100 small surface rings over the simulated trajectory.</p><div class="metrics"><div class="metric"><strong>~0.7 kg</strong><span>total predicted ablation</span></div><div class="metric"><strong>0.9</strong><span>assumed emissivity</span></div><div class="metric"><strong>1973 K</strong><span>assumed ablation temperature</span></div></div></div></div></section><section class="section"><div class="container story-grid"><div><h2>Assumptions and limits</h2></div><div class="story-copy"><p>This was deliberately a simplified engineering model. Key assumptions included ballistic zero-lift entry, constant flight-path angle and ballistic coefficient, constant material properties, a flat non-rotating Earth approximation, quasi-steady ablation, and no conduction term into the spacecraft structure.</p><p>Those limitations are important: the model is best read as a first-order way to understand the coupling between trajectory and thermal protection rather than as a flight-qualified prediction.</p></div></div></section><section class="section"><div class="container"><div class="section-heading"><h2>Visuals</h2><p>Selected CAD, test data, and simulation outputs from the project.</p></div><div class="gallery"><figure><img src="../assets/images/spacecraft-heating-profile.webp" alt="Aerodynamic heating profile" loading="lazy"><figcaption>Stagnation heat flux changes strongly through descent because both density and velocity vary with altitude.</figcaption></figure><figure><img src="../assets/images/spacecraft-heat-flux-map.webp" alt="Heat-flux map at peak heating" loading="lazy"><figcaption>Local heat-flux distribution over the curved heat shield at the modeled peak-heating condition.</figcaption></figure><figure class="wide"><img src="../assets/images/spacecraft-ablation-map.webp" alt="Ablation distribution" loading="lazy"><figcaption>Modeled surface mass-loss distribution, totaling about 0.7 kg in the simplified model.</figcaption></figure></div></div></section>
+    <section class="section compact">
+      <div class="container">
+        <div class="contact-band">
+          <div>
+            <h2>More engineering work</h2>
+            <p>Return to the main portfolio for mechanical design, controls, thermal-fluid modeling, and manufacturing projects.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#work">All projects</a>
+            <a class="button secondary" href="mailto:mfirat@olin.edu">Email me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span data-year>2026</span> Mehmet Firat</div>
+      <div class="footer-links"><a href="../index.html#work">Work</a><a href="../assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="mailto:mfirat@olin.edu">Email</a></div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A team controls project that identified motor and pendulum dynamics from experimental data, then developed and tested controllers for a self-balancing inverted-pendulum robot.">
+  <meta name="theme-color" content="#090c11">
+  <title>Rocky balancing robot | Mehmet Firat</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="Mehmet Firat home">Mehmet <span>Firat</span></a>
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#about">About</a>
+        <a href="../assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a class="nav-cta" href="https://www.linkedin.com/in/mehmetafirat" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="project-hero">
+      <div class="container">
+        <a class="back-link" href="../index.html#work">← Back to selected work</a>
+        <div class="project-meta">Controls · system identification · 2026</div>
+        <h1>Rocky balancing robot</h1>
+        <p class="lede">A team controls project that identified motor and pendulum dynamics from experimental data, then developed and tested controllers for a self-balancing inverted-pendulum robot.</p>
+        <div class="tag-row"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">Arduino</span><span class="tag">System identification</span><span class="tag">Feedback controls</span></div>
+        <div class="hero-actions"><a class="button primary" href="../assets/docs/Rocky_Balancing_Robot_Report.pdf" target="_blank" rel="noopener">Download full report</a><a class="button secondary" href="https://youtube.com/shorts/4PalO6uJMQc?feature=share" target="_blank" rel="noopener">Watch demo ↗</a></div>
+        <div class="project-media"><img src="../assets/images/rocky-hero.webp" alt="Final five-pole controller response plots for angle, velocity, and displacement"></div>
+        <div class="project-facts"><div class="fact"><span>Team</span><strong>Eliam Batista · Kaman Chen · Mehmet Firat</strong></div><div class="fact"><span>Motor time constant</span><strong>0.0455 s</strong></div><div class="fact"><span>Natural frequency</span><strong>4.096 rad/s</strong></div><div class="fact"><span>Effective length</span><strong>0.5846 m</strong></div></div>
+      </div>
+    </section>
+    <section class="section"><div class="container story-grid"><div><h2>System identification</h2></div><div class="story-copy"><p>Motor calibration data were collected by applying step commands to both wheel motors while recording wheel velocities with an Arduino-based setup. The measured response was imported into MATLAB and fitted to a first-order model.</p><p>The fit produced a motor decay rate of approximately <strong>21.98 s⁻¹</strong>, a time constant of about <strong>0.0455 s</strong>, and motor gain of approximately <strong>0.0025</strong>. A separate free-response test of the pendulum produced a natural frequency of <strong>4.096 rad/s</strong> and an effective pendulum length of about <strong>0.5846 m</strong>.</p></div></div></section><section class="section"><div class="container story-grid"><div><h2>First controller: balance without position control</h2></div><div class="story-copy"><p>The first closed-loop design used a three-pole controller to regulate body angle. In simulation, the angle recovered after disturbances, but cart velocity and displacement did not return to zero.</p><p>That mismatch mattered on the physical robot: the controller could keep correcting the angle while the wheels accelerated and the robot eventually moved too far to remain balanced.</p></div></div></section><section class="section"><div class="container story-grid"><div><h2>Stationary balancing controller</h2></div><div class="story-copy"><p>The second design added feedback around cart motion, creating a higher-order stationary balancing controller. Target poles were selected to produce fast, well-damped angular recovery while avoiding overly aggressive cart motion.</p><p>In the five-pole simulation, angle, velocity, and displacement all returned toward zero after repeated disturbances. The physical robot showed similar overall behavior, with extra noise and less-smooth settling due to friction, motor mismatch, and sensor noise.</p><div class="callout">The strongest part of this project is the full engineering loop: measure the real system → identify a model → design a controller → compare simulation with hardware → revise the control architecture.</div></div></div></section><section class="section"><div class="container"><div class="section-heading"><h2>Visuals</h2><p>Selected CAD, test data, and simulation outputs from the project.</p></div><div class="gallery"><figure><img src="../assets/images/rocky-motor-calibration.webp" alt="Motor calibration data" loading="lazy"><figcaption>Measured left- and right-wheel response to repeated step commands.</figcaption></figure><figure><img src="../assets/images/rocky-model-fit.webp" alt="Motor model fit" loading="lazy"><figcaption>First-order model fitted to measured right-wheel velocity data.</figcaption></figure><figure><img src="../assets/images/rocky-three-pole-response.webp" alt="Three-pole angular response" loading="lazy"><figcaption>Initial controller restores body angle after a disturbance but does not regulate the cart back to a stationary state.</figcaption></figure><figure><img src="../assets/images/rocky-five-pole-angle.webp" alt="Five-pole angle response" loading="lazy"><figcaption>Final stationary controller returns the body angle toward zero after repeated disturbances.</figcaption></figure><figure><img src="../assets/images/rocky-five-pole-velocity.webp" alt="Five-pole velocity response" loading="lazy"><figcaption>Cart velocity returns toward zero after each disturbance.</figcaption></figure><figure><img src="../assets/images/rocky-five-pole-displacement.webp" alt="Five-pole displacement response" loading="lazy"><figcaption>Cart displacement returns close to the starting position after each disturbance.</figcaption></figure></div></div></section>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading"><h2>Robot demo</h2><p>The project report links to a short video of the physical balancing robot. The physical system showed the same overall behavior as the simulation, with additional real-world noise and settling effects.</p></div>
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/4PalO6uJMQc" title="Rocky balancing robot demonstration" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="contact-band">
+          <div>
+            <h2>More engineering work</h2>
+            <p>Return to the main portfolio for mechanical design, controls, thermal-fluid modeling, and manufacturing projects.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="../index.html#work">All projects</a>
+            <a class="button secondary" href="mailto:mfirat@olin.edu">Email me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span data-year>2026</span> Mehmet Firat</div>
+      <div class="footer-links"><a href="../index.html#work">Work</a><a href="../assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume</a><a href="mailto:mfirat@olin.edu">Email</a></div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
