@@ -3,210 +3,483 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mechanical engineering portfolio of Mehmet Firat — design, prototyping, controls, thermal-fluid modeling, and manufacturing.">
-  <meta name="theme-color" content="#090c11">
-  <title>Mehmet Firat | Mechanical Engineering Portfolio</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Mehmet Firat — Mechanical Engineering student at Olin College of Engineering. Selected work in mechanical design, robotics, controls, manufacturing, and thermal-fluid modeling.">
+  <title>Mehmet Firat | Mechanical Engineering</title>
+  <style>
+    :root {
+      --bg: #f7f7f3;
+      --paper: #ffffff;
+      --text: #171717;
+      --muted: #666861;
+      --line: #d9dad3;
+      --accent: #2457d6;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    img { display: block; width: 100%; }
+
+    .wrap {
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .name {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    main { padding-bottom: 80px; }
+
+    .hero {
+      padding: 88px 0 74px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.97;
+      letter-spacing: -0.06em;
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 28px 0 0;
+      font-size: 1.18rem;
+      color: var(--muted);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 22px;
+      margin-top: 30px;
+      font-weight: 700;
+    }
+
+    .links a { color: var(--accent); }
+
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-content { min-width: 0; }
+    .section-content > p:first-child { margin-top: 0; }
+
+    .about-text {
+      max-width: 720px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 54px minmax(0, 1fr) 250px;
+      gap: 24px;
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .project:first-child { border-top: 0; padding-top: 0; }
+
+    .project-number {
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9rem;
+      padding-top: 4px;
+    }
+
+    .project h3 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .project p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.93rem;
+      font-weight: 700;
+    }
+
+    .project-links a { color: var(--accent); }
+
+    .thumb {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      aspect-ratio: 4 / 3;
+    }
+
+    .thumb img {
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 24px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-item:first-child { border-top: 0; padding-top: 0; }
+
+    .date { color: var(--muted); font-size: 0.92rem; }
+    .experience-item h3 { margin: 0 0 3px; font-size: 1.2rem; }
+    .role { font-weight: 650; margin-bottom: 7px; }
+    .experience-item p { margin: 0; color: var(--muted); }
+
+    .skills {
+      display: grid;
+      gap: 16px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 20px;
+    }
+
+    .skill-row strong { font-size: 0.95rem; }
+    .skill-row span { color: var(--muted); }
+
+    .contact h3 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .contact p { color: var(--muted); max-width: 650px; }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 780px) {
+      .section-title { grid-template-columns: 1fr; gap: 24px; }
+      .project { grid-template-columns: 42px 1fr; }
+      .thumb { grid-column: 2; max-width: 420px; }
+      .experience-item { grid-template-columns: 1fr; gap: 7px; }
+      .skill-row { grid-template-columns: 1fr; gap: 3px; }
+    }
+
+    @media (max-width: 560px) {
+      header { padding: 18px 0; }
+      nav { align-items: flex-start; }
+      .nav-links { justify-content: flex-end; gap: 10px 16px; }
+      .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+      .hero { padding: 64px 0 56px; }
+      section { padding: 56px 0; }
+      .project { grid-template-columns: 1fr; gap: 12px; }
+      .project-number, .thumb { grid-column: 1; }
+      .thumb { max-width: none; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Mehmet Firat home">Mehmet <span>Firat</span></a>
-      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#work">Work</a>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="name" href="#top">Mehmet Firat</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume</a>
-        <a class="nav-cta" href="https://www.linkedin.com/in/mehmetafirat" target="_blank" rel="noopener">LinkedIn ↗</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Mechanical engineering portfolio</div>
-          <h1>Mehmet<br><span class="soft">Firat</span></h1>
-          <p class="hero-copy">I design, build, test, and model mechanical systems — from drone-deployed soil sampling mechanisms and Formula enclosures to balancing robots and spacecraft heat-shield models.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#work">View selected work ↓</a>
-            <a class="button secondary" href="assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Open resume ↗</a>
-            <a class="button secondary" href="mailto:mfirat@olin.edu">Email me</a>
-          </div>
-        </div>
-        <aside class="hero-panel" aria-label="Profile highlights">
-          <h2>Olin College of Engineering</h2>
-          <div class="stat-list">
-            <div class="stat-row"><strong>2028</strong><span>B.S. Mechanical Engineering, expected May 2028</span></div>
-            <div class="stat-row"><strong>3.92</strong><span>GPA listed on current engineering portfolio</span></div>
-            <div class="stat-row"><strong>2026</strong><span>Farm Robotics Challenge Excellence in Drone Applications Award, Division I</span></div>
-            <div class="stat-row"><strong>Co-Lead</strong><span>Mechanical Design, Olin Robotics Lab</span></div>
-          </div>
-        </aside>
+        <a href="assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
       </div>
-    </section>
+    </nav>
+  </div>
+</header>
 
-    <section class="section" id="work">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Selected work</h2>
-          <p>Projects focused on mechanical design, rapid prototyping, experimental validation, controls, and thermal-fluid modeling. Each page highlights the engineering problem, the iteration process, and the result.</p>
-        </div>
-
-        <div class="project-grid">
-          <a class="project-card" href="projects/hydrofleet.html">
-            <div class="image-wrap"><img src="assets/images/hydrofleet-hero.webp" alt="Two CAD iterations of the HydroFleet drone-mounted soil probe" loading="eager"></div>
-            <div class="content">
-              <div class="project-meta">Mechanical design · robotics · 2024–present</div>
-              <h3>HydroFleet soil sampling mechanism</h3>
-              <p>Drone-deployed soil-moisture probe designed around insertion stability and a strict 700 g payload limit, iterated through bench and soil testing.</p>
-              <div class="tag-row"><span class="tag">CAD</span><span class="tag">Prototyping</span><span class="tag">Testing</span><span class="tag">Mechanisms</span></div>
-              <div class="card-link">View project <span>→</span></div>
-            </div>
-          </a>
-
-          <a class="project-card" href="projects/rocky-balancing-robot.html">
-            <div class="image-wrap"><img src="assets/images/rocky-hero.webp" alt="Simulation plots from the Rocky five-pole stationary balancing controller"></div>
-            <div class="content">
-              <div class="project-meta">Controls · MATLAB/Simulink · 2026</div>
-              <h3>Rocky balancing robot</h3>
-              <p>System identification and controller development for an inverted-pendulum robot, progressing from angle-only balance to stationary disturbance recovery.</p>
-              <div class="tag-row"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">Arduino</span><span class="tag">Controls</span></div>
-              <div class="card-link">View project <span>→</span></div>
-            </div>
-          </a>
-
-          <a class="project-card" href="projects/spacecraft-reentry.html">
-            <div class="image-wrap"><img src="assets/images/spacecraft-hero.webp" alt="Aerodynamic heating and heat-shield ablation plots from a spacecraft re-entry model"></div>
-            <div class="content">
-              <div class="project-meta">Thermal-fluids · numerical modeling · 2026</div>
-              <h3>Spacecraft re-entry thermal model</h3>
-              <p>A first-order re-entry model connecting atmosphere, trajectory, stagnation-point heating, heat-flux distribution, radiation, and ablation.</p>
-              <div class="tag-row"><span class="tag">MATLAB</span><span class="tag">Heat transfer</span><span class="tag">Fluid dynamics</span><span class="tag">Modeling</span></div>
-              <div class="card-link">View project <span>→</span></div>
-            </div>
-          </a>
-
-          <a class="project-card" href="projects/formula.html">
-            <div class="image-wrap"><img src="assets/images/formula-hero.webp" alt="Formula dashboard and electronics enclosure CAD"></div>
-            <div class="content">
-              <div class="project-meta">CAD · FEA · fabrication · 2024–2026</div>
-              <h3>Formula dashboard & enclosure</h3>
-              <p>SolidWorks design and fabrication of cockpit hardware, including a dashboard and removable electronics enclosure with FEA-guided mass reduction.</p>
-              <div class="tag-row"><span class="tag">SolidWorks</span><span class="tag">FEA</span><span class="tag">DFM</span><span class="tag">Fabrication</span></div>
-              <div class="card-link">View project <span>→</span></div>
-            </div>
-          </a>
-
-          <a class="project-card" href="projects/masterpiece.html">
-            <div class="image-wrap"><img src="assets/images/masterpiece-hero.webp" alt="Automated chessboard and CoreXY mechanism details"></div>
-            <div class="content">
-              <div class="project-meta">Mechanisms · integrated engineering · 2025</div>
-              <h3>Masterpiece automated chessboard</h3>
-              <p>A 35 × 28 in. concealed CoreXY gantry moves magnetic chess pieces using a servo-driven permanent-magnet carriage.</p>
-              <div class="tag-row"><span class="tag">CoreXY</span><span class="tag">3D printing</span><span class="tag">Laser cutting</span><span class="tag">Integration</span></div>
-              <div class="card-link">View project <span>→</span></div>
-            </div>
-          </a>
-
-          <a class="project-card" href="projects/parallelometer.html">
-            <div class="image-wrap"><img src="assets/images/parallelometer-hero.webp" alt="Circuit diagram for an ultrasonic angle-measurement instrument"></div>
-            <div class="content">
-              <div class="project-meta">Instrumentation · MATLAB · 2025</div>
-              <h3>Parallelometer angle instrument</h3>
-              <p>Dual 40 kHz ultrasonic sensing with three-stage band-pass amplification and MATLAB time-of-flight processing for angle measurement.</p>
-              <div class="tag-row"><span class="tag">Sensors</span><span class="tag">Analog circuits</span><span class="tag">MATLAB</span><span class="tag">Validation</span></div>
-              <div class="card-link">View project <span>→</span></div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Experience</h2>
-          <p>Engineering work outside the classroom, with emphasis on practical manufacturing constraints, design iteration, and mentoring.</p>
-        </div>
-        <div class="experience-grid">
-          <article class="experience-card">
-            <div class="date">June–August 2026</div>
-            <h3>Cibo Vita</h3>
-            <div class="role">Manufacturing Engineering / Operations Intern</div>
-            <ul>
-              <li>Designed a cutter-scraper extension that addressed recurring product blockages and supported installation and testing.</li>
-              <li>Designed a modular cleaning-cart concept for 120 MULTIPOND components and iterated 3D-printed holder geometry through repeated fit tests.</li>
-              <li>Investigated low-output production equipment and presented mechanical and process-improvement recommendations.</li>
-            </ul>
-          </article>
-          <article class="experience-card">
-            <div class="date">October 2025–present</div>
-            <h3>Boston Education & Counseling</h3>
-            <div class="role">Robotics Mentor</div>
-            <ul>
-              <li>Mentor students through robot builds and mechanical troubleshooting.</li>
-              <li>Support wiring, fabrication, testing, and iterative design decisions.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-heading">
-          <h2>How I work</h2>
-          <p>I am most interested in engineering where analysis connects directly to something that gets built, tested, and improved.</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-card">
-            <h3>Mechanical design & analysis</h3>
-            <div class="skill-list">
-              <div class="skill-item"><strong>CAD / analysis</strong><span>SolidWorks, Onshape, FEA, design for manufacturing, thermal modeling</span></div>
-              <div class="skill-item"><strong>Fabrication</strong><span>3D printing, laser cutting, CNC machining, waterjet cutting, welding</span></div>
-              <div class="skill-item"><strong>Programming / data</strong><span>MATLAB, Python, Java, Arduino-based prototyping</span></div>
-            </div>
-          </div>
-          <div class="about-card">
-            <h3>Design through iteration</h3>
-            <p>Across projects, I use CAD and modeling to form a first design, test it against the real system, and use the failures or mismatches to guide the next iteration. That loop shows up in the HydroFleet anchoring mechanism, Formula packaging, Rocky controller development, and manufacturing work at Cibo Vita.</p>
-            <a class="button secondary small" href="assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Full resume ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section compact">
-      <div class="container">
-        <div class="contact-band">
-          <div>
-            <h2>Let’s build something useful.</h2>
-            <p>For internships, engineering opportunities, or project conversations, email me or connect on LinkedIn.</p>
-          </div>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:mfirat@olin.edu">mfirat@olin.edu</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/mehmetafirat" target="_blank" rel="noopener">LinkedIn ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span data-year>2026</span> Mehmet Firat</div>
-      <div class="footer-links">
-        <a href="#work">Work</a>
-        <a href="assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+<main id="top">
+  <!-- EDIT THIS: HERO / INTRO -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Mechanical Engineering · Olin College of Engineering</div>
+      <h1>I like designing, building, and figuring out how things work.</h1>
+      <p class="intro">
+        I'm Mehmet Firat, a mechanical engineering student interested in product design,
+        robotics, controls, prototyping, and hands-on engineering. I enjoy taking a problem
+        from CAD and analysis to a physical system that can be tested and improved.
+      </p>
+      <div class="links">
+        <a href="#projects">View projects ↓</a>
+        <a href="assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+        <a href="https://www.linkedin.com/in/mehmetafirat" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="mailto:mfirat@olin.edu">Email</a>
       </div>
     </div>
-  </footer>
-  <script src="assets/js/main.js"></script>
+  </div>
+
+  <!-- EDIT THIS: ABOUT -->
+  <section id="about">
+    <div class="wrap section-title">
+      <h2>About</h2>
+      <div class="section-content">
+        <p class="about-text">
+          I am pursuing a B.S. in Mechanical Engineering at Olin College of Engineering,
+          expected May 2028. My favorite projects combine mechanical design with building,
+          testing, and iteration. I am especially interested in mechanical design, robotics,
+          manufacturing, and R&D work where I can prototype and learn quickly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDIT THIS: PROJECTS. Copy one <article class="project"> block to add a new project. -->
+  <section id="projects">
+    <div class="wrap section-title">
+      <h2>Projects</h2>
+      <div class="section-content">
+
+        <article class="project">
+          <div class="project-number">01</div>
+          <div>
+            <div class="meta">Mechanical Design · Robotics · 2024–Present</div>
+            <h3>HydroFleet Soil Sampling Mechanism</h3>
+            <p>
+              Co-developed drone-mounted soil-probe prototypes under a 700 g payload limit.
+              The mechanism evolved through bench and soil testing to improve insertion,
+              alignment, and resistance to drill-induced uplift.
+            </p>
+            <div class="project-links">
+              <span>SolidWorks / Prototyping / Testing</span>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/hydrofleet-hero.webp" alt="HydroFleet soil probe CAD">
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-number">02</div>
+          <div>
+            <div class="meta">Integrated Engineering · Mechanisms · 2025</div>
+            <h3>Masterpiece Automated Chessboard</h3>
+            <p>
+              Designed board mounts and co-designed the belt tensioners, magnet carriage,
+              and side panels for a 35 × 28 in. CoreXY system that moves magnetic chess pieces
+              below the playing surface.
+            </p>
+            <div class="project-links">
+              <span>CAD / CoreXY / Laser Cutting / 3D Printing</span>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/masterpiece-hero.webp" alt="Masterpiece automated chessboard">
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-number">03</div>
+          <div>
+            <div class="meta">Controls · MATLAB/Simulink · 2026</div>
+            <h3>Rocky Self-Balancing Robot</h3>
+            <p>
+              Identified motor and pendulum dynamics from experimental data, modeled the
+              system in MATLAB/Simulink, and implemented a five-pole feedback controller on
+              the physical robot for stationary disturbance recovery.
+            </p>
+            <div class="project-links">
+              <a href="assets/docs/Rocky_Balancing_Robot_Report.pdf" target="_blank" rel="noopener">Read report →</a>
+              <a href="https://youtube.com/shorts/4PalO6uJMQc?feature=share" target="_blank" rel="noopener">Watch video →</a>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/rocky-hero.webp" alt="Rocky balancing robot simulation results">
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-number">04</div>
+          <div>
+            <div class="meta">Formula Team · CAD/FEA · 2024–2026</div>
+            <h3>Formula Dashboard & Electronics Enclosure</h3>
+            <p>
+              Designed and fabricated a SolidWorks dashboard and electronics enclosure.
+              Used FEA to guide a lighter design, added an LED sun guard and removable lid,
+              and refined packaging with electrical and chassis teammates.
+            </p>
+            <div class="project-links">
+              <span>SolidWorks / FEA / DFM / Fabrication</span>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/formula-hero.webp" alt="Formula dashboard and electronics enclosure CAD">
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-number">05</div>
+          <div>
+            <div class="meta">Thermal-Fluids · Numerical Modeling · 2026</div>
+            <h3>Spacecraft Re-entry Thermal Model</h3>
+            <p>
+              Built a simplified re-entry model connecting atmospheric conditions,
+              trajectory, Sutton–Graves stagnation heating, heat-flux distribution,
+              radiation, and ablative mass loss.
+            </p>
+            <div class="project-links">
+              <a href="assets/docs/Spacecraft_Reentry_Report.pdf" target="_blank" rel="noopener">Read report →</a>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="assets/images/spacecraft-hero.webp" alt="Spacecraft re-entry thermal model results">
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDIT THIS: EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap section-title">
+      <h2>Experience</h2>
+      <div class="section-content">
+        <div class="experience-item">
+          <div class="date">Jun–Aug 2026</div>
+          <div>
+            <h3>Cibo Vita</h3>
+            <div class="role">Manufacturing Engineering / Operations Intern</div>
+            <p>
+              Designed and tested production-floor improvements including a cutter-scraper
+              extension, a cleaning-cart concept for MULTIPOND components, and iterated
+              3D-printed hopper holders.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="date">Oct 2025–Present</div>
+          <div>
+            <h3>Boston Education & Counseling</h3>
+            <div class="role">Robotics Mentor</div>
+            <p>
+              Mentor students through robot builds and help troubleshoot mechanical design,
+              wiring, fabrication, and assembly issues.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDIT THIS: SKILLS -->
+  <section id="skills">
+    <div class="wrap section-title">
+      <h2>Skills</h2>
+      <div class="section-content skills">
+        <div class="skill-row">
+          <strong>Design & Analysis</strong>
+          <span>SolidWorks, Onshape, FEA, DFM, mechanical design</span>
+        </div>
+        <div class="skill-row">
+          <strong>Build & Fabrication</strong>
+          <span>CNC machining, waterjet, laser cutting, welding, 3D printing</span>
+        </div>
+        <div class="skill-row">
+          <strong>Programming & Modeling</strong>
+          <span>MATLAB, Simulink, Python, Arduino/C++, Java</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap section-title">
+      <h2>Contact</h2>
+      <div class="section-content">
+        <h3>Want to talk engineering?</h3>
+        <p>I'm open to mechanical engineering internship opportunities and interesting projects.</p>
+        <div class="links">
+          <a href="mailto:mfirat@olin.edu">mfirat@olin.edu</a>
+          <a href="https://www.linkedin.com/in/mehmetafirat" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="assets/docs/Mehmet_Firat_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Mehmet Firat</div>
+</footer>
+
 </body>
 </html>

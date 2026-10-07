@@ -1,65 +1,40 @@
-# Mehmet Firat — GitHub Pages Portfolio
+# Mehmet Firat — Simple GitHub Portfolio
 
-This folder is a complete static portfolio site. It does not need Node, React, a database, or a build step.
-
-## What is included
-
-- Home page with selected work, experience, skills, resume, email, and LinkedIn
-- Project pages for:
-  - HydroFleet soil sampling mechanism
-  - Rocky balancing robot
-  - Spacecraft re-entry thermal model
-  - Formula dashboard & enclosure
-  - Masterpiece automated chessboard
-  - Parallelometer angle instrument
-- Full PDF reports for Rocky and Spacecraft Re-entry
-- Current resume PDF
-- Responsive mobile navigation
-- Local images and CSS; no framework dependency
+This version is intentionally simple: **one editable `index.html` file** plus the images/PDFs it uses.
+There is no JavaScript, no framework, and no build step.
 
 ## Put it on GitHub Pages
 
-### Best option: personal site
+1. Open your `malifirat.github.io` repository on GitHub.
+2. Delete the old portfolio files (or replace them with this version).
+3. Upload **everything inside this folder** so `index.html` is at the top level of the repository.
+4. Commit the changes.
+5. Your site should update at `https://malifirat.github.io/` after GitHub Pages finishes deploying.
 
-1. Sign into GitHub.
-2. Create a **public** repository named exactly:
-   `YOUR-GITHUB-USERNAME.github.io`
-3. Upload the contents of this folder to the **root** of that repository. `index.html` should be at the top level.
-4. Open the repository's **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select branch **main** and folder **/(root)**, then save.
-7. After GitHub finishes publishing, the site will be at:
-   `https://YOUR-GITHUB-USERNAME.github.io/`
+## Edit the website directly on GitHub
 
-### Alternative: project repository
+1. Open `index.html` in your GitHub repository.
+2. Click the pencil icon **Edit this file**.
+3. Search for the comments that start with `EDIT THIS:`.
+4. Change the text you want.
+5. Click **Commit changes**.
 
-You can instead use a repository such as `portfolio`. The site will publish at:
-`https://YOUR-GITHUB-USERNAME.github.io/portfolio/`
+Almost all normal editing is done in `index.html`.
 
-The site uses relative links, so it works in either setup.
+## Add another project
 
-## Things to update first
+Inside `index.html`, find the Projects section. Copy one complete block that starts with:
 
-Search the files for these values when you want to change them:
+```html
+<article class="project">
+```
 
-- `mfirat@olin.edu` — current contact email
-- `https://www.linkedin.com/in/mehmetafirat` — LinkedIn
-- `Expected May 2028` / `2028` — graduation date
-- `3.92` — GPA if it changes
+and ends with:
 
-The current resume PDF still contains the old Adobe Portfolio URL. Once your GitHub URL is final, update the resume source and replace:
-`assets/docs/Mehmet_Firat_Resume.pdf`
+```html
+</article>
+```
 
-## Editing projects later
+Paste it below another project and change the number, title, description, links, and image.
 
-- Home project cards: `index.html`
-- Individual project pages: `projects/*.html`
-- Site appearance: `assets/css/styles.css`
-- Images: `assets/images/`
-- Resume and reports: `assets/docs/`
-
-You can edit HTML directly in GitHub by opening a file and clicking the pencil icon.
-
-## Optional custom domain later
-
-After graduation, you can point a custom domain (for example, `mehmetfirat.com`) to this same GitHub Pages repository. The portfolio files do not need to be rebuilt.
+Put new images in `assets/images/` and PDFs in `assets/docs/`.
