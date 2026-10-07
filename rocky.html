@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="From an angle-only controller to a five-pole design that brings wheel motion back toward zero.">
+<meta name="color-scheme" content="light">
+<title>Rocky | Mehmet Firat</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Mehmet Firat home">
+<span class="brand-mark" aria-hidden="true">MF</span>Mehmet Firat</a>
+<nav aria-label="Main navigation">
+<a href="index.html#work">Work</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="case-header wrap">
+<a class="back-link" href="index.html#work">← All projects</a>
+<p class="eyebrow">Stationary balancing robot</p>
+<h1>Rocky</h1>
+<p class="case-lead">System identification, simulation, and embedded control for a two-wheel inverted-pendulum robot.</p>
+<a class="text-link" href="assets/reports/rocky-balancing-robot.pdf">Read full report (PDF) ↓</a>
+</div>
+<div class="case-layout wrap">
+<aside>
+<dl class="project-facts">
+<div>
+<dt>Context</dt>
+<dd>Controls · System identification</dd>
+</div>
+<div>
+<dt>Contribution</dt>
+<dd>Team project: model fitting, simulation, and embedded controller development.</dd>
+</div>
+<div>
+<dt>Tools & methods</dt>
+<dd>MATLAB · Simulink · Arduino · CoolTerm · System identification · Feedback control</dd>
+</div>
+</dl>
+</aside>
+<article class="case-body">
+<div class="metrics">
+<div>
+<strong>45.5 ms</strong>
+<span>Reported fitted motor time constant</span>
+</div>
+<div>
+<strong>4.096 rad/s</strong>
+<span>Reported pendulum natural frequency</span>
+</div>
+<div>
+<strong>5 poles</strong>
+<span>Stationary-balancing model</span>
+</div>
+</div>
+<section class="case-section ">
+<h2>The challenge</h2>
+<p>Keep the robot upright after disturbances while bringing its wheel velocity and displacement back toward zero.</p>
+</section>
+<section class="case-section ">
+<h2>Approach</h2>
+<p>The team measured motor and pendulum dynamics, developed a PI-based balancing controller in MATLAB and Simulink, and implemented it on the Rocky robot. An initial angle-only controller exposed an important limitation: recovering upright did not prevent the wheels from drifting. A five-pole design added wheel-motion feedback to support stationary balancing.</p>
+<ul>
+<li>Collected wheel step-response and pendulum free-response data with Arduino and CoolTerm, then fitted dynamic models in MATLAB.</li>
+<li>Compared the initial three-pole angle controller with a five-pole controller incorporating wheel velocity, position, and integrated-position feedback.</li>
+<li>Implemented the controller in Arduino code, including encoder and angle measurements and motor-command limits, and compared hardware behavior with the Simulink response.</li>
+</ul>
+</section>
+<figure class="">
+<a class="image-link" href="assets/images/rocky-motor-step-response-fit.png" aria-label="Open image: Measured right-wheel step response and fitted first-order motor model.">
+<img src="assets/images/rocky-motor-step-response-fit.png" alt="Red measured right-wheel velocity samples and a black fitted response curve approaching steady speed." width="700" height="422" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Measured right-wheel step response and fitted first-order motor model.</figcaption>
+</figure>
+<figure class="">
+<a class="image-link" href="assets/images/rocky-five-pole-control-diagram.png" aria-label="Open image: Simulink architecture for the five-pole stationary-balancing controller.">
+<img src="assets/images/rocky-five-pole-control-diagram.png" alt="Simulink feedback diagram connecting the PI angle controller, closed-loop motor subsystem, robot dynamics, and motion outputs." width="1153" height="302" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Simulink architecture for the five-pole stationary-balancing controller.</figcaption>
+</figure>
+<section class="case-section ">
+<h2>From drifting to stationary balance</h2>
+<div class="gallery ">
+<figure class="">
+<a class="image-link" href="assets/images/rocky-three-pole-position-drift.png" aria-label="Open image: Initial three-pole simulation: displacement continues to drift after disturbances.">
+<img src="assets/images/rocky-three-pole-position-drift.png" alt="Simulated cart position increases across a 30-second disturbance-response test." width="1749" height="703" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Initial three-pole simulation: displacement continues to drift after disturbances.</figcaption>
+</figure>
+<figure class="">
+<a class="image-link" href="assets/images/rocky-five-pole-position-recovery.png" aria-label="Open image: Five-pole simulation: displacement returns toward zero after repeated disturbances.">
+<img src="assets/images/rocky-five-pole-position-recovery.png" alt="Three simulated position excursions followed by recovery toward zero in a 30-second test." width="875" height="619" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Five-pole simulation: displacement returns toward zero after repeated disturbances.</figcaption>
+</figure>
+</div>
+</section>
+<section class="case-section ">
+<h2>Results & reflection</h2>
+<p>The five-pole simulations returned angle, velocity, and displacement toward zero after repeated disturbances. The report describes similar overall behavior on the physical robot, with noisier and less smooth settling. The linked demonstration accompanies that qualitative hardware comparison.</p>
+<p>Balance alone is not the same as stationary balance: the wheel-motion feedback matters as much as the angle loop.</p>
+</section>
+<section class="case-section ">
+<h2>Hardware demonstration</h2>
+<figure class="video-card">
+<div class="video-frame" data-video="4PalO6uJMQc" data-title="Rocky balancing-robot demonstration">
+<button class="video-launch" type="button" aria-label="Play Rocky balancing-robot demonstration">
+<img src="assets/images/rocky-five-pole-position-recovery.png" alt="Project preview: Rocky balancing-robot demonstration" width="875" height="619" class="" loading="lazy" decoding="async">
+<span class="play-icon" aria-hidden="true">▶</span>
+<span class="video-label">Play video</span>
+</button>
+</div>
+<figcaption>Rocky balancing-robot demonstration <a class="text-link" href="https://www.youtube.com/watch?v=4PalO6uJMQc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+</figcaption>
+</figure>
+</section>
+<section class="case-section ">
+<h2>Team</h2>
+<p>Eliam Batista · Kaman Chen · Mehmet Firat</p>
+</section>
+</article>
+</div>
+<div class="next-project wrap">
+<span>Next project</span>
+<a class="text-link" href="reentry.html">Re-entry heating →</a>
+</div>
+</main>
+<footer class="site-footer wrap">
+<span>Mehmet Firat · Mechanical engineering</span>
+<a href="#main">Back to top ↑</a>
+</footer>
+</body>
+</html>

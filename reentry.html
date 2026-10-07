@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Connecting atmosphere, trajectory, heating and material loss in a simplified re-entry model.">
+<meta name="color-scheme" content="light">
+<title>Re-entry heating | Mehmet Firat</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Mehmet Firat home">
+<span class="brand-mark" aria-hidden="true">MF</span>Mehmet Firat</a>
+<nav aria-label="Main navigation">
+<a href="index.html#work">Work</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="case-header wrap">
+<a class="back-link" href="index.html#work">← All projects</a>
+<p class="eyebrow">Heat-shield ablation model</p>
+<h1>Re-entry heating</h1>
+<p class="case-lead">A simplified model connecting atmospheric density, descent velocity, heat flux, and heat-shield ablation.</p>
+<a class="text-link" href="assets/reports/reentry-heating-ablation.pdf">Read full report (PDF) ↓</a>
+</div>
+<div class="case-layout wrap">
+<aside>
+<dl class="project-facts">
+<div>
+<dt>Context</dt>
+<dd>Thermal fluids · Simulation</dd>
+</div>
+<div>
+<dt>Contribution</dt>
+<dd>Team modeling project; the report does not assign individual subsystems.</dd>
+</div>
+<div>
+<dt>Tools & methods</dt>
+<dd>Thermal-fluid modeling · Ballistic trajectory model · Sutton–Graves correlation · Surface energy balance · Numerical simulation</dd>
+</div>
+</dl>
+</aside>
+<article class="case-body">
+<div class="metrics">
+<div>
+<strong>~0.7 kg</strong>
+<span>Predicted ablation under modeled assumptions</span>
+</div>
+<div>
+<strong>100 rings</strong>
+<span>Heat-shield surface discretization</span>
+</div>
+<div>
+<strong>7.8 km/s</strong>
+<span>Assumed initial entry speed</span>
+</div>
+</div>
+<section class="case-section ">
+<h2>The challenge</h2>
+<p>Estimate where heating becomes most severe during descent and how much heat-shield material is consumed in a first-order model.</p>
+</section>
+<section class="case-section ">
+<h2>Approach</h2>
+<p>This two-week team project explored how a spacecraft’s changing speed and atmospheric environment shape re-entry heating. The model links a layered atmosphere and simplified ballistic descent with stagnation-point heating, a curved-surface heat-flux distribution, and a radiation-versus-ablation energy balance.</p>
+<ul>
+<li>Modeled temperature, pressure, and density from sea level to approximately 84.9 km, then stepped through a simplified constant-flight-path-angle descent.</li>
+<li>Used the Sutton–Graves correlation for stagnation-point heating and a cosine-based distribution to map heat flux across the curved shield.</li>
+<li>Divided the shield into 100 rings and integrated material loss from heat flux exceeding the assumed radiative limit.</li>
+</ul>
+</section>
+<div class="gallery ">
+<figure class="">
+<a class="image-link" href="assets/images/reentry-velocity-altitude.png" aria-label="Open image: Simplified descent model: the vehicle slows as it reaches denser, lower-altitude air.">
+<img src="assets/images/reentry-velocity-altitude.png" alt="Modeled speed is near 7.8 kilometers per second at high altitude and decreases rapidly below about 50 kilometers." width="516" height="331" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Simplified descent model: the vehicle slows as it reaches denser, lower-altitude air.</figcaption>
+</figure>
+<figure class="">
+<a class="image-link" href="assets/images/reentry-stagnation-heating-profile.png" aria-label="Open image: Predicted stagnation-point heat flux along the simplified re-entry trajectory.">
+<img src="assets/images/reentry-stagnation-heating-profile.png" alt="Modeled aerodynamic heating rises to a peak during descent and falls as the vehicle slows." width="524" height="338" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Predicted stagnation-point heat flux along the simplified re-entry trajectory.</figcaption>
+</figure>
+</div>
+<figure class="">
+<a class="image-link" href="assets/images/reentry-ablation-distribution.png" aria-label="Open image: Predicted accumulated ablation across the shield; the report gives about 0.7 kg total material loss.">
+<img src="assets/images/reentry-ablation-distribution.png" alt="Predicted mass ablated per unit area is greatest at the heat-shield center and lower at the edges." width="806" height="510" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Predicted accumulated ablation across the shield; the report gives about 0.7 kg total material loss.</figcaption>
+</figure>
+<section class="case-section ">
+<h2>Model output</h2>
+<p>The report predicts approximately 0.7 kg of total ablation for its assumed vehicle, trajectory, and material parameters. Its plots show heating concentrated near the shield center and a heating peak partway through descent, where the vehicle remains fast as atmospheric density increases.</p>
+</section>
+<section class="case-section ">
+<h2>Assumptions & limits</h2>
+<p>This is an educational, unvalidated first-order estimate. The final model uses a simplified surface energy balance and does not solve internal conduction, back-wall temperature, pyrolysis, or changing shield geometry.</p>
+<ul>
+<li>Constant flight-path angle, vehicle mass, drag coefficient, and material properties.</li>
+<li>Parameters compiled from multiple sources, rather than a validated reconstruction of one mission.</li>
+<li>Radiation and ablation represented with a simplified surface energy balance.</li>
+</ul>
+</section>
+</article>
+</div>
+<div class="next-project wrap">
+<span>Next project</span>
+<a class="text-link" href="formula.html">Olin Formula →</a>
+</div>
+</main>
+<footer class="site-footer wrap">
+<span>Mehmet Firat · Mechanical engineering</span>
+<a href="#main">Back to top ↑</a>
+</footer>
+</body>
+</html>

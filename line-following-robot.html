@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A two-sensor robot that follows a tape course using calibrated reflectance and pulse-based steering.">
+<meta name="color-scheme" content="light">
+<title>Line-following robot | Mehmet Firat</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer>
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="Mehmet Firat home">
+<span class="brand-mark" aria-hidden="true">MF</span>Mehmet Firat</a>
+<nav aria-label="Main navigation">
+<a href="index.html#work">Work</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<div class="case-header wrap">
+<a class="back-link" href="index.html#work">← All projects</a>
+<p class="eyebrow">Sensing, actuation & control</p>
+<h1>Line-following robot</h1>
+<p class="case-lead">A two-sensor robot that follows a tape course using calibrated reflectance and pulse-based steering.</p>
+</div>
+<div class="case-layout wrap">
+<aside>
+<dl class="project-facts">
+<div>
+<dt>Context</dt>
+<dd>Embedded systems · Prototyping</dd>
+</div>
+<div>
+<dt>Contribution</dt>
+<dd>Team project integrating sensor mounts, circuits, calibration, and control.</dd>
+</div>
+<div>
+<dt>Tools & methods</dt>
+<dd>Arduino · C++ · IR sensors · 3D printing · Data logging</dd>
+</div>
+</dl>
+</aside>
+<article class="case-body">
+<div class="metrics">
+<div>
+<strong>7 mm</strong>
+<span>Sensor standoff</span>
+</div>
+<div>
+<strong>2</strong>
+<span>Sensors used</span>
+</div>
+<div>
+<strong>700</strong>
+<span>Analog threshold</span>
+</div>
+</div>
+<figure class="">
+<a class="image-link" href="assets/images/work-03.jpg" aria-label="Open image: The differential-drive robot with front-mounted IR reflectance sensors.">
+<img src="assets/images/work-03.jpg" alt="The differential-drive robot with front-mounted IR reflectance sensors." width="1800" height="1350" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>The differential-drive robot with front-mounted IR reflectance sensors.</figcaption>
+</figure>
+<section class="case-section ">
+<h2>The challenge</h2>
+<p>Our team integrated sensing, motor actuation, and control so a two-wheel robot could follow a non-circular tape course. An Arduino Uno and Adafruit Motor Shield drove two DC gearmotors, with two IR sensors measuring floor reflectivity.</p>
+</section>
+<section class="case-section ">
+<h2>Mechanical & electrical integration</h2>
+<p>We designed 3D-printed sensor holders for repeatable spacing, easy removal, and protected wiring. Calibration led to a 7 mm sensor standoff. Although the mounts and circuit were designed to support four sensors, the tested controller used only the front two.</p>
+<p>A split 12 V supply powered the Arduino and motor shield, with sensors using the Arduino’s 5 V supply and a shared ground. USB Serial was used for data logging; tuning changes required reflashing the code.</p>
+</section>
+<div class="gallery ">
+<figure class="">
+<a class="image-link" href="assets/images/line-following-robot-02.jpg" aria-label="Open image: Front-mounted sensors on the robot.">
+<img src="assets/images/line-following-robot-02.jpg" alt="Front-mounted sensors on the robot." width="622" height="463" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Front-mounted sensors on the robot.</figcaption>
+</figure>
+<figure class="">
+<a class="image-link" href="assets/images/line-following-robot-03.jpg" aria-label="Open image: Chassis and four-holder mounting layout in CAD.">
+<img src="assets/images/line-following-robot-03.jpg" alt="Chassis and four-holder mounting layout in CAD." width="647" height="369" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Chassis and four-holder mounting layout in CAD.</figcaption>
+</figure>
+</div>
+<section class="case-section ">
+<h2>Calibrating the control loop</h2>
+<p>Typical analog readings were about 950 over tape and 450 over the floor, giving a threshold near 700. Short pulse-and-stop pivots and a 4 ms debounce delay reduced switching chatter. Different base PWM values compensated for the motors’ mechanical bias.</p>
+</section>
+<div class="gallery ">
+<figure class="">
+<a class="image-link" href="assets/images/line-following-robot-04.jpg" aria-label="Open image: Circuit design, including the four-sensor provision; two sensors were used in testing.">
+<img src="assets/images/line-following-robot-04.jpg" alt="Circuit design, including the four-sensor provision; two sensors were used in testing." width="606" height="450" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Circuit design, including the four-sensor provision; two sensors were used in testing.</figcaption>
+</figure>
+<figure class="">
+<a class="image-link" href="assets/images/line-following-robot-05.jpg" aria-label="Open image: Logged reflectance values and commanded motor PWM during a run.">
+<img src="assets/images/line-following-robot-05.jpg" alt="Logged reflectance values and commanded motor PWM during a run." width="607" height="425" class="" loading="lazy" decoding="async">
+</a>
+<figcaption>Logged reflectance values and commanded motor PWM during a run.</figcaption>
+</figure>
+</div>
+<section class="case-section ">
+<h2>Results & next iteration</h2>
+<p>The robot followed the tape with a simple bang-bang controller. Sensor threshold crossings aligned with steering commands in the logged data. The test also highlighted motor dead zones and the limitations of blocking pivot loops.</p>
+<p>A next iteration would use non-blocking control, add hysteresis or filtering, investigate PD control for corners, and log multiple laps to quantify repeatability.</p>
+</section>
+<section class="case-section ">
+<h2>In action</h2>
+<figure class="video-card">
+<div class="video-frame" data-video="N8Zymy35Pog" data-title="Line-following robot test">
+<button class="video-launch" type="button" aria-label="Play Line-following robot test">
+<img src="assets/images/work-03.jpg" alt="Project preview: Line-following robot test" width="1800" height="1350" class="" loading="lazy" decoding="async">
+<span class="play-icon" aria-hidden="true">▶</span>
+<span class="video-label">Play video</span>
+</button>
+</div>
+<figcaption>Line-following robot test <a class="text-link" href="https://www.youtube.com/watch?v=N8Zymy35Pog" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+</figcaption>
+</figure>
+</section>
+</article>
+</div>
+<div class="next-project wrap">
+<span>Next project</span>
+<a class="text-link" href="masterpiece.html">Masterpiece →</a>
+</div>
+</main>
+<footer class="site-footer wrap">
+<span>Mehmet Firat · Mechanical engineering</span>
+<a href="#main">Back to top ↑</a>
+</footer>
+</body>
+</html>
