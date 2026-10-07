@@ -1,40 +1,24 @@
-# Mehmet Firat — Simple GitHub Portfolio
+# Mehmet Firat — GitHub Pages Portfolio
 
-This version is intentionally simple: **one editable `index.html` file** plus the images/PDFs it uses.
-There is no JavaScript, no framework, and no build step.
+This version keeps the simple one-page homepage, but restores the structure of the original Adobe portfolio:
 
-## Put it on GitHub Pages
+- Robo Lab / HydroFleet
+- Formula
+- Self Playing Chess Board / Masterpiece
+- Line Following Robot
+- Rocky Self-Balancing Robot
+- Spacecraft Re-entry Thermal Model
+- Coursework collection with 12 smaller projects
 
-1. Open your `malifirat.github.io` repository on GitHub.
-2. Delete the old portfolio files (or replace them with this version).
-3. Upload **everything inside this folder** so `index.html` is at the top level of the repository.
-4. Commit the changes.
-5. Your site should update at `https://malifirat.github.io/` after GitHub Pages finishes deploying.
+Each main project on the homepage opens a detailed project page. Coursework opens one clean page with expandable smaller projects.
 
-## Edit the website directly on GitHub
+## Upload to GitHub Pages
 
-1. Open `index.html` in your GitHub repository.
-2. Click the pencil icon **Edit this file**.
-3. Search for the comments that start with `EDIT THIS:`.
-4. Change the text you want.
-5. Click **Commit changes**.
+1. Unzip this folder.
+2. Open the `malifirat.github.io` repository on GitHub.
+3. Upload **the contents of this folder**, not the outer folder itself.
+4. Make sure `index.html`, `styles.css`, `projects/`, and `assets/` are at the repository root.
+5. Commit the upload.
+6. Visit `https://malifirat.github.io/` after GitHub Pages rebuilds.
 
-Almost all normal editing is done in `index.html`.
-
-## Add another project
-
-Inside `index.html`, find the Projects section. Copy one complete block that starts with:
-
-```html
-<article class="project">
-```
-
-and ends with:
-
-```html
-</article>
-```
-
-Paste it below another project and change the number, title, description, links, and image.
-
-Put new images in `assets/images/` and PDFs in `assets/docs/`.
+If files with the same names already exist, replace them with these versions.
