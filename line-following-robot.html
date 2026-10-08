@@ -21,6 +21,7 @@
 <a href="index.html#work">Work</a>
 <a href="index.html#about">About</a>
 <a href="index.html#contact">Contact</a>
+<a href="assets/reports/mehmet-firat-resume.pdf">Resume</a>
 </nav>
 </div>
 </header>
@@ -71,12 +72,12 @@
 </figure>
 <section class="case-section ">
 <h2>The challenge</h2>
-<p>Our team integrated sensing, motor actuation, and control so a two-wheel robot could follow a non-circular tape course. An Arduino Uno and Adafruit Motor Shield drove two DC gearmotors, with two IR sensors measuring floor reflectivity.</p>
+<p>Our team integrated sensing, motor actuation, and control so a two-wheel differential-drive robot could follow a non-circular tape course quickly and reliably. An Arduino Uno and Adafruit Motor Shield v2.3 drove two DC gearmotors, with two IR sensors measuring floor reflectivity.</p>
 </section>
 <section class="case-section ">
-<h2>Mechanical & electrical integration</h2>
-<p>We designed 3D-printed sensor holders for repeatable spacing, easy removal, and protected wiring. Calibration led to a 7 mm sensor standoff. Although the mounts and circuit were designed to support four sensors, the tested controller used only the front two.</p>
-<p>A split 12 V supply powered the Arduino and motor shield, with sensors using the Arduino’s 5 V supply and a shared ground. USB Serial was used for data logging; tuning changes required reflashing the code.</p>
+<h2>Mechanical integration &amp; sensor holders</h2>
+<p>We designed 3D-printed holders that let the IR boards slide in and out without tools while maintaining repeatable left–right spacing. A circular cable pass-through keeps the wires straight and away from the wheels; side cut-outs and the mounting pattern reuse existing chassis holes.</p>
+<p>Four holders were installed across the front edge to support a wider field of view and multi-sensor control, although only the front two sensors were used in the tested system. Calibration led to a 7 mm standoff, which maximized tape-to-floor contrast while preserving ground clearance.</p>
 </section>
 <div class="gallery ">
 <figure class="">
@@ -92,9 +93,37 @@
 <figcaption>Chassis and four-holder mounting layout in CAD.</figcaption>
 </figure>
 </div>
+<section class="case-section">
+<h2>Power, wiring &amp; resistor selection</h2>
+<p>A 12 V wall adapter feeds a split harness: one branch connects to the Arduino Uno barrel jack, while the red and black leads power the Adafruit Motor Shield v2.3 through its screw terminals. The left DC gearmotor connects to M1 and the right to M4. Both reflectance sensors use the Arduino’s 5 V supply and a common ground, with analog outputs connected to A2 and A3. The circuit, like the mounting layout, provides for four sensors; testing used two.</p>
+<p>Each sensor uses a 200 Ω current-limiting resistor for its IR LED and a 10 kΩ pull-up for its phototransistor output. Using Ohm’s law and the values from the sensor documentation, we estimated:</p>
+<ul>
+<li><strong>IR LED:</strong> (5 V − 1.2 V) / 20 mA ≈ 190 Ω; we used 200 Ω.</li>
+<li><strong>Phototransistor pull-up:</strong> (5 V − 1 V) / 0.5 mA ≈ 8 kΩ; we used 10 kΩ.</li>
+</ul>
+</section>
+<figure>
+<a class="image-link" href="assets/images/line-following-robot-01.jpg" aria-label="Open image: System architecture: power, data, and control paths between the computer, Arduino, motor shield, sensors, and motors.">
+<img src="assets/images/line-following-robot-01.jpg" alt="Block diagram of the line-following robot system, including power and data connections" width="692" height="507" loading="lazy" decoding="async" class="">
+</a>
+<figcaption>System architecture: power, data, and control paths between the computer, Arduino, motor shield, sensors, and motors.</figcaption>
+</figure>
 <section class="case-section ">
-<h2>Calibrating the control loop</h2>
-<p>Typical analog readings were about 950 over tape and 450 over the floor, giving a threshold near 700. Short pulse-and-stop pivots and a 4 ms debounce delay reduced switching chatter. Different base PWM values compensated for the motors’ mechanical bias.</p>
+<h2>Sensor calibration</h2>
+<p>With the robot powered and the sensors at the final 7 mm height, we logged approximately three seconds of analog readings while holding each sensor over white tape, then repeated the measurement over the surrounding floor. Tape was the on-track surface. Typical readings of approximately 950 on tape and 450 on floor gave a midpoint threshold of 700: values above it indicated tape, and values below it indicated floor.</p>
+<p>During tuning, we checked that the tape and floor readings remained well separated across different floor patches and adjusted the threshold when they drifted. We also added delays after motion commands. Without enough delay, the robot could spin too far and make its next decision using a reading that no longer matched its position; the delays improved the consistency of tape detection.</p>
+</section>
+<section class="case-section">
+<h2>Controller states, timing &amp; logging</h2>
+<p>The bang-bang controller compares the left and right readings on A2 and A3 against the fixed threshold, TH = 700. Trimmed base PWM commands of 54 on the left and 78 on the right compensate for a small mechanical bias. With our motor wiring polarity, the shield’s BACKWARD command produces forward robot motion.</p>
+<ul>
+<li><strong>Both sensors on tape:</strong> drive straight using short PWM pulse-and-stop actions.</li>
+<li><strong>Only the left sensor on tape:</strong> pivot right until the off-line sensor crosses the threshold.</li>
+<li><strong>Only the right sensor on tape:</strong> pivot left until the off-line sensor crosses the threshold.</li>
+<li><strong>Both sensors off tape:</strong> fall back to driving straight.</li>
+</ul>
+<p>Pivots use short pulses inside blocking while-loops, with a 4 ms debounce delay between pulses to reduce chatter. The main loop is paced at 8 ms, but motion helpers add short 10 ms pulse/stop intervals, so the effective cycle takes longer than 8 ms during pivots.</p>
+<p>Each cycle logs a CSV row with time_s, left, right, MotorL, and MotorR. The motor fields are the signed PWM commands issued by the controller, with signs describing direction relative to our wiring. USB Serial was used only to collect these logs for plotting. Threshold and base-speed changes were made between runs by editing constants, recompiling, and reflashing, rather than through live tuning.</p>
 </section>
 <div class="gallery ">
 <figure class="">
@@ -112,8 +141,9 @@
 </div>
 <section class="case-section ">
 <h2>Results & next iteration</h2>
-<p>The robot followed the tape with a simple bang-bang controller. Sensor threshold crossings aligned with steering commands in the logged data. The test also highlighted motor dead zones and the limitations of blocking pivot loops.</p>
-<p>A next iteration would use non-blocking control, add hysteresis or filtering, investigate PD control for corners, and log multiple laps to quantify repeatability.</p>
+<p>The robot followed the tape with the simple bang-bang controller and blocking pivot pulses. The combined trace showed frequent step changes in motor commands aligned with rapid sensor changes at tape edges, along with steady straight segments.</p>
+<p>One anomaly was that one motor rarely appeared to reverse. Possible explanations were a short power-on delay that obscured an early reverse command, or a command too small to overcome the motor’s static friction. These were hypotheses from the test, rather than confirmed causes. The robot still corrected its course, with a less sharp turn.</p>
+<p>A next iteration would replace the blocking loops with non-blocking control, add hysteresis or light smoothing near the threshold, and investigate PD control for faster corners. Widening the sensor spacing or adding a center sensor could provide a more informative error signal. We would also consider untethered power and log multiple laps to quantify repeatability.</p>
 </section>
 <section class="case-section ">
 <h2>In action</h2>

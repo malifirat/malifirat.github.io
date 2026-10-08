@@ -21,6 +21,7 @@
 <a href="index.html#work">Work</a>
 <a href="index.html#about">About</a>
 <a href="index.html#contact">Contact</a>
+<a href="assets/reports/mehmet-firat-resume.pdf">Resume</a>
 </nav>
 </div>
 </header>
@@ -50,6 +51,12 @@
 </dl>
 </aside>
 <article class="case-body">
+<figure>
+<a class="image-link" href="assets/images/work-04.jpg" aria-label="Open image: Olin Formula vehicle shown on the original portfolio.">
+<img src="assets/images/work-04.jpg" alt="The Olin Formula race car, with a dark body and blue accent panels" width="485" height="363" loading="lazy" decoding="async" class="">
+</a>
+<figcaption>Olin Formula vehicle shown on the original portfolio.</figcaption>
+</figure>
 <div class="gallery ">
 <figure class="">
 <a class="image-link" href="assets/images/formula-01.jpg" aria-label="Open image: Dashboard CAD with LED sun guard and emergency-stop button.">
@@ -74,7 +81,7 @@
 </section>
 <section class="case-section ">
 <h2>Dashboard</h2>
-<p>An angled front face and integrated sun guard reduced direct glare at the LED indicators. Design-review feedback led to more mounting points for stiffness, alongside packaging for emergency-stop and ready-to-drive controls.</p>
+<p>An angled front face and integrated sun guard were designed to improve LED readability in direct sunlight. The dashboard also accommodated the emergency-stop and ready-to-drive buttons. Early feedback showed that two mounts were insufficient, so additional mounting points were added after the first design review to improve rigidity.</p>
 </section>
 <div class="gallery ">
 <figure class="">
@@ -93,6 +100,7 @@
 <section class="case-section ">
 <h2>Electronics enclosure</h2>
 <p>A slide-fit removable top and well-tab geometry made access possible without removing the entire enclosure. Connector placement allowed the connectors to come out with the top, while the internal layout accommodated the sensing controller, throttle, brakes, and Raspberry Pi with HAT.</p>
+<p>The layout was sized for both current electronics and future boards. Velcro straps provided additional retention and ease of service, and the chassis interfaces were designed for welded attachment. Packaging had to preserve board access while avoiding steering-wheel obstruction and chassis interference.</p>
 </section>
 <div class="gallery ">
 <figure class="">
@@ -109,8 +117,14 @@
 </figure>
 </div>
 <section class="case-section ">
-<h2>Iteration & manufacturing</h2>
-<p>Across design reviews, I revised dimensions for connector requirements, added dashboard mounts, and adjusted the access strategy around maintenance feedback. The manufacturing plan combined laser-cut acrylic panels, 3D-printed features, and planned welded chassis mounts.</p>
+<h2>Review decisions &amp; manufacturing plan</h2>
+<p>Across DR1 and DR2, I integrated electrical-team feedback and adapted the design to chassis updates. The Nostril dimensions changed to match updated connector requirements, and maintenance feedback informed the access strategy. These iterations were recorded in design-review slides and Coda documentation.</p>
+<ul>
+<li><strong>Dashboard and enclosure housing:</strong> acrylic panels, with laser cutting for flat components.</li>
+<li><strong>Sun guard and mounts:</strong> 3D printing for the more complex features.</li>
+<li><strong>Chassis interfaces:</strong> planned welding for the chassis-mounted components.</li>
+</ul>
+<p>These were design-for-manufacturing choices and a fabrication plan; the CAD was prepared for manufacturing and prototyping.</p>
 </section>
 </article>
 </div>

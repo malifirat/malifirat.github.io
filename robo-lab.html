@@ -21,6 +21,7 @@
 <a href="index.html#work">Work</a>
 <a href="index.html#about">About</a>
 <a href="index.html#contact">Contact</a>
+<a href="assets/reports/mehmet-firat-resume.pdf">Resume</a>
 </nav>
 </div>
 </header>
@@ -30,8 +31,24 @@
 <p class="eyebrow">Robo Lab</p>
 <h1>Drone soil sampler</h1>
 <p class="case-lead">A lightweight, drone-mounted mechanism for repeatable soil-moisture sampling.</p>
+<div class="report-links">
 <a class="text-link" href="https://drive.google.com/file/d/1CTthVP5PVVEAv-8-1UoBMjeWehAuMTm2/view?usp=sharing" target="_blank" rel="noopener noreferrer">Design sprint slides ↗</a>
+<a class="text-link" href="assets/reports/robolab-sprint-3-review.pdf">Sprint 3 review (PDF) ↓</a>
 </div>
+</div>
+<section class="featured-video wrap" aria-labelledby="overview-film">
+<h2 id="overview-film">HydroFleet in the field</h2>
+<p class="film-intro">Farm Robotics Challenge’s overview of the team’s drone-based soil-sampling project.</p>
+<figure class="video-card">
+<div class="video-frame" data-video="_SdpMSzPFr8" data-title="Farm Robotics Challenge: soil-sampling drone fleet">
+<button class="video-launch screenshot-poster" type="button" aria-label="Play Farm Robotics Challenge soil-sampling drone overview">
+<img src="assets/images/hydrofleet-overview-video.png" alt="Farm Robotics Challenge video showing a drone carrying a soil probe over a field" width="917" height="584" loading="eager" decoding="async" class="">
+</button>
+</div>
+<figcaption>Students Build Autonomous Soil-Sampling Drone Fleet to Help Growers · Farm Robotics Challenge <a class="text-link" href="https://www.youtube.com/watch?v=_SdpMSzPFr8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+</figcaption>
+</figure>
+</section>
 <div class="case-layout wrap">
 <aside>
 <dl class="project-facts">
@@ -52,12 +69,12 @@
 <article class="case-body">
 <div class="metrics">
 <div>
-<strong>~610 g</strong>
-<span>Mark 1 prototype mass</span>
+<strong>694 g</strong>
+<span>Sprint 3 sampler mass</span>
 </div>
 <div>
-<strong>2</strong>
-<span>Prototype iterations</span>
+<strong>5+ inches</strong>
+<span>Reported Sprint 3 travel</span>
 </div>
 <div>
 <strong>6 inches</strong>
@@ -80,16 +97,41 @@
 </div>
 <section class="case-section ">
 <h2>The challenge</h2>
-<p>Collecting useful soil-moisture data across a farm requires a probe that can insert, measure, and retract reliably without exceeding a drone’s payload capacity. We explored a drone-mounted sampler through design sprints, concept evaluations, and physical prototypes.</p>
+<p>Farmers need timely soil-moisture data to make irrigation decisions, but existing sampling methods can be slow, expensive, or limited in spatial resolution. A drone-mounted system could increase coverage and sampling frequency if its probe could insert and retract reliably, survive repeated soil impacts, and remain within the drone’s payload capacity.</p>
+<p>We explored a lightweight, repeatable, and scalable sampler through design sprints, concept evaluations, and physical prototypes, with soil variability and insertion reliability shaping the design.</p>
+</section>
+<section class="case-section">
+<h2>Original sampling requirements</h2>
+<p>The requirements below guided the early concepts. They were design targets, rather than measurements demonstrated by the prototypes:</p>
+<ul>
+<li>Sample to a depth of 6 inches, with a longer-term goal of scaling to 18 inches.</li>
+<li>Keep the sampling failure rate below 5%.</li>
+<li>Operate within the drone’s payload capacity.</li>
+<li>Avoid damaging crops during insertion.</li>
+<li>Maintain moisture-measurement error within ±5% when the probe is properly inserted.</li>
+<li>Work across different soil conditions.</li>
+</ul>
 </section>
 <section class="case-section ">
 <h2>My contribution</h2>
-<p>I led mechanical concept development and CAD design, iterated the lead-screw, auger, and probe assemblies, and built and tested physical prototypes. I also evaluated trade-offs among motor choice, mass, stability, and insertion force.</p>
+<p>I led mechanical concept development and CAD design, iterated the lead-screw, auger, and probe assemblies, and built and tested physical prototypes. I also evaluated trade-offs among motor choice, mass, stability, and insertion force, and contributed to sprint planning and design reviews.</p>
 </section>
 <section class="case-section ">
 <h2>From concepts to prototypes</h2>
-<p>Early concepts included an embedded drill probe, spring-loaded harpoon mechanisms, and a gravity-assisted sliding hammer. The drill approach offered controlled insertion and stepwise measurement, with mass and stability as key trade-offs.</p>
-<p>Mark 1 used separate motors for lead-screw travel and auger rotation, allowing the two motions to be tested independently. At approximately 610 g, it exposed stability and mass-distribution issues. Mark 2 revised the layout, centered the auger, and added anchors and a stronger probe holder.</p>
+<figure>
+<a class="image-link" href="assets/images/work-02.jpg" aria-label="Open image: Overall sampler CAD assembly from the original portfolio.">
+<img src="assets/images/work-02.jpg" alt="CAD assembly of the soil sampler with centered auger and anchoring feet" width="536" height="402" loading="lazy" decoding="async" class="">
+</a>
+<figcaption>Overall sampler CAD assembly from the original portfolio.</figcaption>
+</figure>
+<p>We compared three approaches to inserting the probe:</p>
+<ul>
+<li><strong>Embedded drill probe:</strong> a lead screw drives a rotating auger into the soil, allowing controlled insertion and stepwise measurement. Its expected insertion reliability came with a higher mass in the concept evaluation.</li>
+<li><strong>Harpoon mechanisms:</strong> spring-loaded designs using snail or helical cams store energy and release it for rapid soil penetration. Force control and repeatability were the main challenges.</li>
+<li><strong>Sliding hammer:</strong> a gravity-assisted hammer impacts the probe into the soil. It offered a simple mechanism with minimal actuation, while alignment and repeatability were the primary concerns.</li>
+</ul>
+<p><strong>Mark 1:</strong> a stepper motor drove the lead screw and a servo drove the auger, allowing downward speed to be varied independently from auger rotation. At approximately 610 g, the prototype exposed stability and mass-distribution issues.</p>
+<p><strong>Mark 2:</strong> the motor and auger layout was rearranged for stability, the auger was centered for better alignment, and mass was reduced where possible. Anchors and a stronger probe holder were added.</p>
 </section>
 <figure class="narrow-figure">
 <a class="image-link" href="assets/images/robo-lab-02.jpg" aria-label="Open image: An intermediate CAD view of the revised motor and auger arrangement.">
@@ -98,11 +140,58 @@
 <figcaption>An intermediate CAD view of the revised motor and auger arrangement.</figcaption>
 </figure>
 <section class="case-section ">
-<h2>Testing & design targets</h2>
-<p>Both versions were built and tested with bench and soil-bucket trials. Tests highlighted torque demands, probe alignment, slippage, soil compaction, and anchoring challenges.</p>
-<p>The project’s design targets included 6-inch sampling depth, less than 5% sampling failure, and moisture error below ±5% on proper insertion. These were requirements, not claimed validated performance results.</p>
-<p>Further work identified in the project included reliable 6-inch sampling, improved anchoring, eventual scaling to 18 inches, and field testing with growers.</p>
+<h2>Early testing &amp; next steps</h2>
+<p>Both versions were physically built and tested on the bench and in soil buckets. Video-documented insertion and retraction cycles were used to examine motor torque, structural stability, and alignment. The trials exposed slippage, soil compaction, and anchoring challenges, providing feedback on insertion behavior and failure modes in real soil.</p>
+<p>The original development plan was to finalize the 6-inch probe for consistent data collection, explore alternative anchoring mechanisms, scale toward 18-inch sampling, and conduct field tests with farmers. The Sprint 3 review below provides the later integration status.</p>
 </section>
+<section class="case-section" id="sprint-3">
+<p class="eyebrow">April 10, 2026 · Team design review</p>
+<h2>Sprint 3: integrating the sampler</h2>
+<p>By Sprint 3, the team’s sampler weighed 694 g and had a reported travel of a little over 5 inches. This was mechanism travel, rather than a verified soil-sampling depth. The review brought mechanical revisions together with probe wiring, distance sensing, and drone attachment.</p>
+<ul>
+<li>
+<strong>Anchors and base:</strong> shorter, rounder anchors and a more open base layout.</li>
+<li>
+<strong>Probe and electronics:</strong> an assembled probe holder, a fully wired probe, and repackaged wiring with a slip ring.</li>
+<li>
+<strong>Suspension:</strong> attachment holes moved above the top plate to revise the drone-to-sampler connection.</li>
+<li>
+<strong>Distance measurement:</strong> an ultrasonic sensor was mounted, wired, and reported functional.</li>
+</ul>
+<div class="gallery">
+<figure>
+<a class="image-link" href="assets/images/robolab-sprint3-prototype.jpg" aria-label="Open image: The Sprint 3 sampler prototype, reported at 694 g.">
+<img src="assets/images/robolab-sprint3-prototype.jpg" alt="Assembled soil sampler with drill probe, wiring and upper suspension mounts" width="1125" height="1500" loading="lazy" decoding="async">
+</a>
+<figcaption>The Sprint 3 sampler prototype, reported at 694 g.</figcaption>
+</figure>
+<figure>
+<a class="image-link" href="assets/images/robolab-sprint3-wiring.jpg" aria-label="Open image: Repackaged electronics and probe wiring, including the slip ring.">
+<img src="assets/images/robolab-sprint3-wiring.jpg" alt="Top of the sampler showing motor, electronics boards, probe connections and wiring" width="1125" height="1500" loading="lazy" decoding="async">
+</a>
+<figcaption>Repackaged electronics and probe wiring, including the slip ring.</figcaption>
+</figure>
+<figure>
+<a class="image-link" href="assets/images/robolab-sprint3-open-base.jpg" aria-label="Open image: Revised open base with the shorter anchor layout.">
+<img src="assets/images/robolab-sprint3-open-base.jpg" alt="CAD render of an open sampler base and its curved anchor arms" width="1022" height="549" loading="lazy" decoding="async">
+</a>
+<figcaption>Revised open base with the shorter anchor layout.</figcaption>
+</figure>
+<figure>
+<a class="image-link" href="assets/images/robolab-sprint3-drone-attachment.jpg" aria-label="Open image: Attachment holes raised above the plate.">
+<img src="assets/images/robolab-sprint3-drone-attachment.jpg" alt="CAD render of the upper sampler plate with vertical drone attachment tabs" width="676" height="499" loading="lazy" decoding="async">
+</a>
+<figcaption>Attachment holes raised above the plate.</figcaption>
+</figure>
+</div>
+<h2>What testing still needed to resolve</h2>
+<p>The review identified soil-dependent anchor performance, wire tangling, and fragile base-mounted servo supports. Further testing and stronger mounts were planned. These findings kept the focus on repeatability and durability, beyond getting one successful cycle.</p>
+<p>At the wider system level, a single sampling routine could return data over CAN, but a second run could hang and distance-sensor-based control still needed testing. Separate drone flight tests demonstrated a slung load; the full-mission test shown in the review had not yet combined that load with CAN-controlled sampling. End-to-end integration remained work in progress at this review.</p>
+<p>
+<a class="text-link" href="assets/reports/robolab-sprint-3-review.pdf">Read the full Sprint 3 review (PDF) ↓</a>
+</p>
+</section>
+
 <section class="case-section ">
 <h2>Prototype videos</h2>
 <div class="gallery ">
@@ -151,20 +240,6 @@
 </figcaption>
 </figure>
 </div>
-</section>
-<section class="case-section ">
-<h2>Project overview</h2>
-<figure class="video-card">
-<div class="video-frame" data-video="_SdpMSzPFr8" data-title="Farm Robotics Challenge: soil-sampling drone fleet">
-<button class="video-launch" type="button" aria-label="Play Farm Robotics Challenge: soil-sampling drone fleet">
-<img src="assets/images/robo-lab-03.jpg" alt="Project preview: Farm Robotics Challenge: soil-sampling drone fleet" width="337" height="398" class="" loading="lazy" decoding="async">
-<span class="play-icon" aria-hidden="true">▶</span>
-<span class="video-label">Play video</span>
-</button>
-</div>
-<figcaption>Farm Robotics Challenge: soil-sampling drone fleet <a class="text-link" href="https://www.youtube.com/watch?v=_SdpMSzPFr8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
-</figcaption>
-</figure>
 </section>
 <section class="case-section ">
 <h2>Original soil test</h2>

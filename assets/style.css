@@ -263,3 +263,20 @@ body{background:white}
 .local-video{max-width:400px;margin-inline:auto}
 .local-video video{display:block;width:100%;max-height:620px;background:#10232d;aspect-ratio:480/852}
 
+
+/* Report downloads remain separate, touch-friendly links on small screens. */
+.report-links{display:flex;flex-wrap:wrap;gap:12px 30px;align-items:center}
+
+/* Featured overview and image-backed video previews. */
+.hero-photo.hero-feature{transform:none}
+.video-launch.screenshot-poster img{object-fit:contain;opacity:1;aspect-ratio:auto}
+.video-launch.diagram-poster img{object-fit:contain;background:white;opacity:.9;padding:10px}
+.hero-resume{margin:20px 0 0}
+.hero-resume+.hero-note{margin-top:16px}
+.featured-video{padding-bottom:45px}
+.featured-video h2{font-size:28px;margin-bottom:12px}
+.film-intro{font-size:15px;color:var(--muted);max-width:760px}
+.featured-video .video-card{max-width:1000px;margin-inline:auto}
+.featured-video figcaption{font-size:12px;line-height:1.7;margin-top:12px;color:var(--muted)}
+.hero-feature noscript p{padding:12px;font-size:12px;margin:0}
+@media(max-width:520px){.header-inner{flex-wrap:wrap;height:auto;min-height:86px;gap:10px;padding-block:14px}.brand{flex-basis:100%;justify-content:center}nav{width:100%;justify-content:center;gap:26px}nav a{font-size:11px}.featured-video{padding-bottom:32px}.featured-video h2{font-size:25px}}
