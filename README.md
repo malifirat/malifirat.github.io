@@ -1,30 +1,31 @@
 # Mehmet Firat portfolio
 
-Updated November 10, 2026. Static HTML, CSS, and JavaScript for the existing GitHub Pages portfolio.
+## Open locally
 
-## Open the portfolio
+Extract the ZIP and open `index.html`. No build step or installation is required.
 
-1. Extract the ZIP.
-2. Open `index.html` in a browser.
-3. Keep the HTML files and `assets/` folder together. No build step or package installation is required.
+## Update the existing website
 
-The archive contains `index.html` directly at its root. To update the existing repository, replace the corresponding website files with these contents.
+For this image and layout correction, replace these three files at the root of the existing website repository:
 
-## This revision
+- `index.html`
+- `cibo-vita.html`
+- `robo-lab.html`
 
-- The Cibo Vita page leads with the supplied cleaning-cart CAD and explains layout, holder prototypes, loading, drainage, and the manufacturing handoff. Two selected photos show component fit checks with prototype supports. The scraper improvement remains a shorter section.
-- The RoboLab page leads with the latest sampler CAD and describes the current drive, rotating probe, anchors, suspension, and testing. Personal contributions reflect Mehmet’s confirmation that he worked across the mechanical system with the team.
-- Older RoboLab images and April measurements are labeled as development history.
-- The homepage uses the new cart and sampler imagery.
-- CAD images can be enlarged, with captions and keyboard navigation. The layout adapts to narrow screens.
-- Older `projects/` URLs redirect to the current pages.
+Each of those HTML files includes its own images, styling, and page script. The sampler page also includes its short soil-test video. The new pictures and layout therefore travel with the HTML files.
 
-## Structure
+The full archive also retains `assets/`, the other project pages, reports, resume, and older URL redirects. Keep that structure when replacing the complete site. Links to other pages and PDF downloads still need their corresponding files; YouTube videos require internet access.
 
-- Root-level HTML: current pages.
+## Simpler layout
+
+Cibo Vita and RoboLab now use a single reading column: a compact title, the main CAD image, and ordinary text sections. The detailed project explanations are retained. The two Cibo Vita test photos appear together on desktop and stack on phones. The homepage feature is smaller and has fewer visual labels.
+
+## Files
+
+- Root HTML: project pages.
+- `assets/style.css` and `assets/site.js`: shared styling and behavior for the remaining pages, also embedded in the three updated pages.
+- `assets/images/` and `assets/videos/`: original media retained for reuse.
+- `assets/reports/`: supplied reports and resume.
 - `projects/`: compatibility redirects.
-- `assets/style.css` and `assets/site.js`: shared styling and behavior.
-- `assets/images/` and `assets/videos/`: local media.
-- `assets/reports/`: the original supplied reports and resume, unchanged.
 
-`SOURCES.md` records provenance, `VALIDATION.md` records the checks performed, and `REVIEW-BEFORE-PUBLISH.txt` lists a few remaining content details. The working technical report supplied on November 10 is not bundled.
+`SOURCES.md` records provenance. `VALIDATION.md` records the checks. `REVIEW-BEFORE-PUBLISH.txt` records the remaining factual details that would improve future updates.

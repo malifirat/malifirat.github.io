@@ -100,3 +100,11 @@ The user authorized using their supplied photos. Three image uploads were review
 - `978B06D2-D5A8-45FD-AC8A-064E35A0D7C5.jpeg` was not selected because the overhead view repeats the setup with a less legible support interface.
 
 The two selected photographs are copied unchanged and shown without cropping. Captions describe visible component/holder fit checks. They do not identify the exact production-part model or imply a complete cart in service, a scraper installation, or a measured before/after result. The existing scraper result remains based on the user's earlier account.
+
+## Image delivery and simpler layout correction · November 10, 2026
+
+The live Cibo Vita HTML was accessible, but direct checks of the four newly added image URLs under `https://malifirat.github.io/assets/images/` returned HTTP 404. The delivered ZIP contained the correct image files; the deployed site was missing them. The live shared styling and script were also older than those in the supplied update.
+
+To make the corrected pages reliable when the HTML files are replaced, `index.html`, `cibo-vita.html`, and `robo-lab.html` now contain the original image bytes as embedded data URLs, together with their styling and page script. The short local sampler video is also embedded. Original media files remain in the archive. No imagery was regenerated, altered, or reconstructed.
+
+Cibo Vita and RoboLab now use a simple single-column layout with plain headings and paragraphs. The main CAD and selected test photographs remain visible without an image-viewer dependency. Detailed mechanical explanations and the distinction between prototype stages are retained.

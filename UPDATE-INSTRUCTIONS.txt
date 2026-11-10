@@ -1,0 +1,15 @@
+IMAGE AND LAYOUT FIX
+
+Replace these files in the TOP LEVEL of your existing website repository:
+
+index.html
+cibo-vita.html
+robo-lab.html
+
+Do not place them inside an extra folder. Replace the existing files with the same names.
+
+These three pages now contain their images and styling directly. You do not need to upload a separate folder for their pictures to appear.
+
+For the complete portfolio, the ZIP includes all pages and assets. Keep the original folder structure for the other project pages, resume, and report links.
+
+To review locally, extract the ZIP and open index.html.

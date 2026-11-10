@@ -1,37 +1,36 @@
 # Validation · November 10, 2026
 
-The updated files were checked locally. This package does not represent a new GitHub Pages deployment.
+These are checked replacement files. The live GitHub Pages website has not been deployed from this package.
 
-## Passed
+## Image repair
 
-- All 20 HTML files have exactly one primary heading and no duplicate IDs.
-- All 287 local file and section references resolve, including compatibility redirect destinations.
-- All 79 JPG, PNG, and WebP assets decode. Every image element includes alt text.
-- All 7 included PDF files, including legacy copies, are byte-for-byte unchanged from the restored source archive.
-- Shared JavaScript passes Node’s syntax check.
-- Desktop browser review covered the homepage feature, Cibo Vita introduction, and RoboLab mechanism layout.
-- Responsive review covered the homepage, Cibo Vita, and RoboLab in 390 px browser frames. Each had a 375 px content viewport after scrollbar space; document scroll width equaled viewport width. A homepage text overflow found during review was corrected and checked again.
-- Image viewer checks covered opening both new CAD images, showing captions, moving to an older sampler image with Next, closing with Escape and the Close button, and restoring focus to the image link.
-- The legacy `projects/hydrofleet.html` URL was observed redirecting to the updated RoboLab page with the latest CAD available. Other redirect destinations passed static checks.
-- The final ZIP integrity check passed, with `index.html` at the archive root. Preview-only pages and private source material are excluded.
+The live page returned successfully, but the four newly added image paths returned HTTP 404. The live shared CSS and JavaScript were also older than the files in the previous package.
 
-## Content review
+The updated `index.html`, `cibo-vita.html`, and `robo-lab.html` now embed their images, styling, and JavaScript directly. The sampler page also embeds its short local video and poster. The original asset files remain in the complete package for the other pages and future editing.
 
-The sampler explanation was reviewed against the newly supplied working report. The rotating nut and fixed screw, shared main drive, coupled probe/auger, slip ring, anchor changes, and remaining soil limitations are represented consistently. The April measurements are clearly historical.
+## Passed checks
 
-The cart page distinguishes completed CAD and tested holders from the later manufacturing handoff. The scraper result is presented as an installed test outcome. Three directly uploaded photos were subsequently reviewed; two were selected to show the component/support fit checks. The exact production-part model is not inferred from the photographs.
+- The local reference check covered 20 HTML files and 244 file or section references, with no errors.
+- The three replacement pages contain 15 image elements plus one video poster. Embedded image bytes decode and match their corresponding source files.
+- All four previously missing images match the original supplied image bytes exactly.
+- The three replacement pages have no external image, stylesheet, or JavaScript file dependencies. External links, linked reports, other pages, and YouTube remain separate resources.
+- The embedded sampler MP4 matches the original 2,382,429-byte video.
+- Browser review used copies extracted from the ZIP into a separate folder containing only the three HTML files, with no assets folder. All 15 image elements loaded successfully. The video reached ready state 4 and reported a duration of approximately 26.77 seconds.
+- Desktop visual review covered the homepage, cart feature, both project introductions, and both holder-testing photographs.
+- Responsive review used 390 px frames. Cibo Vita and RoboLab both had 375 px content widths after scrollbar space, with no horizontal overflow. The testing photographs loaded and stacked into one column.
+- Cibo Vita and RoboLab use a single reading column with plain headings and paragraphs. Their previous sidebars and decision panels are absent.
+- An independent package review confirmed that the three ZIP entries match the extracted HTML files byte-for-byte.
+- The final ZIP integrity check passed, with `index.html` at the archive root. Preview-only pages and private working material are excluded.
 
-## Photo update checks
+## Content retained
 
-- Both selected photos match the original upload bytes and decode correctly.
-- The revised Cibo Vita page has valid local references, unique IDs, and image alt text.
-- Desktop review confirmed the wide setup and portrait detail appear together without cropping.
-- Mobile review confirmed both photos loaded and the page had no horizontal overflow at a 375 px content width inside a 390 px frame.
-- Enlarging the photos, moving to the detail image, matching captions, and closing with Escape were checked in the browser.
+The latest sampler CAD leads the project. Older prototypes and their measurements remain labeled as earlier stages. The mechanism description distinguishes the rotating nut from the fixed lead screw and preserves the limitations observed in soil testing.
+
+The cart page distinguishes completed CAD and holder prototypes from the manufacturing handoff. The selected photographs show component and holder fit checks. The scraper work is described separately, and its result is presented as an installed test outcome.
 
 ## Limits
 
-- These are desktop-browser responsive checks, not tests on a physical phone or a complete browser matrix.
-- External YouTube playback and Google Drive sharing were not newly verified. Existing source links remain in the portfolio.
+- Responsive checks used a desktop browser, not a physical phone or a complete browser matrix.
+- External YouTube playback and Google Drive sharing were not newly verified.
 - Current numerical gear ratios, final sampler mass, and achieved soil depth remain unconfirmed. See `REVIEW-BEFORE-PUBLISH.txt`.
-- The original resume and older reports are unchanged and may describe a different prototype stage.
+- Existing resumes and older reports are retained and may describe a different prototype stage.
