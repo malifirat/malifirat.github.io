@@ -1,21 +1,37 @@
-# Validation
+# Validation · November 10, 2026
 
-Completed before packaging:
+The updated files were checked locally. This package does not represent a new GitHub Pages deployment.
 
-- All 9 HTML pages have a title, one primary heading, and an English language declaration
-- All relative file links and section anchors resolve within the upload folder
-- All 47 referenced local image files decode successfully; project imagery and selected PDF figures were visually inspected
-- All three supplied PDF reports and the supplied résumé match their original bytes
-- All 9 YouTube video IDs returned metadata and an embed URL from YouTube
-- The local MP4 was checked with ffprobe: H.264 video, AAC audio, 360 × 640, 26.77 seconds
-- JavaScript syntax passes; click-to-play URL creation, accessible title, focus, and repeated-click behavior pass an isolated DOM test
-- The ZIP has `index.html` directly at its root and contains no build dependencies, credentials, or temporary research files
+## Passed
 
-Not verified:
+- All 20 HTML files have exactly one primary heading and no duplicate IDs.
+- All 287 local file and section references resolve, including compatibility redirect destinations.
+- All 79 JPG, PNG, and WebP assets decode. Every image element includes alt text.
+- All 7 included PDF files, including legacy copies, are byte-for-byte unchanged from the restored source archive.
+- Shared JavaScript passes Node’s syntax check.
+- Desktop browser review covered the homepage feature, Cibo Vita introduction, and RoboLab mechanism layout.
+- Responsive review covered the homepage, Cibo Vita, and RoboLab in 390 px browser frames. Each had a 375 px content viewport after scrollbar space; document scroll width equaled viewport width. A homepage text overflow found during review was corrected and checked again.
+- Image viewer checks covered opening both new CAD images, showing captions, moving to an older sampler image with Next, closing with Escape and the Close button, and restoring focus to the image link.
+- The legacy `projects/hydrofleet.html` URL was observed redirecting to the updated RoboLab page with the latest CAD available. Other redirect destinations passed static checks.
+- The final ZIP integrity check passed, with `index.html` at the archive root. Preview-only pages and private source material are excluded.
 
-- Desktop/mobile visual rendering and real-browser interaction tests could not run in the available preview environment. Responsive layouts are implemented at 1000, 700, and 390 px, but are not claimed as browser-tested
-- YouTube playback was not tested end to end; metadata availability does not guarantee playback for every visitor
-- Google Drive links are preserved from the old site; the Rainbow Road report was inspected for this revision, while the other linked reports/slides were not independently audited
-- GitHub Pages deployment was not run; this package is ready for you to upload, not already published
+## Content review
 
-Before publishing, open `index.html` on your computer, check a narrow/mobile window, and try the videos and external report links. Review the full reports, since publishing this folder makes them public too.
+The sampler explanation was reviewed against the newly supplied working report. The rotating nut and fixed screw, shared main drive, coupled probe/auger, slip ring, anchor changes, and remaining soil limitations are represented consistently. The April measurements are clearly historical.
+
+The cart page distinguishes completed CAD and tested holders from the later manufacturing handoff. The scraper result is presented as an installed test outcome. Three directly uploaded photos were subsequently reviewed; two were selected to show the component/support fit checks. The exact production-part model is not inferred from the photographs.
+
+## Photo update checks
+
+- Both selected photos match the original upload bytes and decode correctly.
+- The revised Cibo Vita page has valid local references, unique IDs, and image alt text.
+- Desktop review confirmed the wide setup and portrait detail appear together without cropping.
+- Mobile review confirmed both photos loaded and the page had no horizontal overflow at a 375 px content width inside a 390 px frame.
+- Enlarging the photos, moving to the detail image, matching captions, and closing with Escape were checked in the browser.
+
+## Limits
+
+- These are desktop-browser responsive checks, not tests on a physical phone or a complete browser matrix.
+- External YouTube playback and Google Drive sharing were not newly verified. Existing source links remain in the portfolio.
+- Current numerical gear ratios, final sampler mass, and achieved soil depth remain unconfirmed. See `REVIEW-BEFORE-PUBLISH.txt`.
+- The original resume and older reports are unchanged and may describe a different prototype stage.

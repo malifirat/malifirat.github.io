@@ -1,5 +1,7 @@
 # Sources and media
 
+Latest update: November 10, 2026. Earlier source notes below are retained as provenance, not as new verification.
+
 Prepared from the portfolio and supplied reports, reviewed 7–8 October 2026. Media is reused for Mehmet Firat's portfolio; team work retains attribution. No third-party template source or Ivry Frost biography/content was copied.
 
 ## Original portfolio
@@ -65,3 +67,36 @@ The original blank arrow placeholder and empty video preview were replaced with 
 ## Design reference
 
 https://ivryf.github.io/ informed the simple hierarchy and restrained engineering-portfolio feel. This site uses original HTML/CSS, local system fonts, and Mehmet's own work and media.
+
+## November 8, 2026 reconstructed revision
+
+This revision was rebuilt from the uploaded `malifirat.github.io-main.zip`; the earlier disconnected edit was not recovered. The original portfolio files and supplied PDF reports remain the factual basis.
+
+- Cibo Vita: the supplied `assets/reports/mehmet-firat-resume.pdf`, Work Experience section. The page distinguishes design work, implementation support, reported results, and proposals. No internship photo, material, fastener, cost saving, or throughput percentage was invented.
+- RoboLab contribution: the supplied resume supports shared development of two prototypes, anchor-geometry testing, and a mechanical co-lead role beginning Fall 2026. User-confirmed contribution: work was mostly shared, and Mehmet helped choose a motor. The exact actuator, motor model, gear ratio, torque estimate, and selection process remain unconfirmed.
+- RoboLab measurements: the dated April review supports 694 g and slightly over 5 inches of mechanism travel. The resume's 650 g / 6-inch insertion describes an unconfirmed version; these values are not combined into a new claimed result. The resume PDF is unchanged.
+- Masterpiece ownership and mechanism: preserved from the source package's cited team documentation and supplied resume. Individual board-mount work is separated from contributions to the shared tensioner, carriage, and enclosure design.
+- Existing videos and external reports are retained; they were not newly verified as playable or publicly readable in this revision.
+
+
+## November 10, 2026 update
+
+- Latest uploaded sampler CAD is saved unchanged as `assets/images/hydrofleet-current-cad.png` (744 × 913).
+- Latest uploaded cleaning-cart CAD is saved unchanged as `assets/images/cibo-vita-cleaning-cart-cad.png` (892 × 1115). Both are CAD images, not photographs of completed hardware.
+- Mehmet confirmed that he worked across the mechanical system with the team. RoboLab copy now reflects CAD, the drive, anchors, suspension, assembly, and soil testing; it does not assign flight software, sensor calibration, or the entire team project to him.
+- The newly supplied working technical report supports the current continuous-servo drive, a nut rotating on a fixed lead screw, coupled auger/probe rotation, slip ring, anchor-motor changes, anchor geometry, and suspension. The report itself is not bundled or linked publicly.
+- The numeric gear relationship is omitted because the source does not unambiguously map its ratio to the three gears. Exact actuator torque ratings and final mass are not inferred from incomplete specifications.
+- The new report uses AerialBot; existing team media uses HydroFleet. “Drone soil sampler” is the main title pending clarification. Historical HydroFleet video attribution is retained.
+- The Cibo Vita update uses the supplied CAD and user-provided project context: cart layout and holder prototypes were completed, followed by manufacturing handoff. Unconfirmed part/test counts are omitted. The scraper section retains the supplied result of recurring roughly two-minute hourly cleaning stops eliminated during installed testing.
+- The Google Doc supplied for scraper/testing photos was accessible but blank when read in this update. No images or facts were extracted from it.
+- New CAD images are presented uncropped. Earlier sampler photos and CAD are clearly labeled as development history. No synthetic project imagery was added.
+
+## Selected Cibo Vita testing photos · November 10, 2026
+
+The user authorized using their supplied photos. Three image uploads were reviewed directly after the Google Doc read returned no embedded images.
+
+- `9C221AAA-52C4-45A3-ACF1-5562A17B3396.jpeg` → `assets/images/cibo-vita-holder-fit-overview.jpg`: complete metal component and prototype support arrangement during a fit check, 1536 × 1152.
+- `AA1814E9-1B55-41E1-96B1-7ED047E30BF7.jpeg` → `assets/images/cibo-vita-holder-fit-detail.jpg`: side view of the component/support interface, 1152 × 1536.
+- `978B06D2-D5A8-45FD-AC8A-064E35A0D7C5.jpeg` was not selected because the overhead view repeats the setup with a less legible support interface.
+
+The two selected photographs are copied unchanged and shown without cropping. Captions describe visible component/holder fit checks. They do not identify the exact production-part model or imply a complete cart in service, a scraper installation, or a measured before/after result. The existing scraper result remains based on the user's earlier account.

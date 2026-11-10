@@ -3,264 +3,157 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Designing and testing a lightweight auger mechanism for repeatable soil-moisture sampling.">
+<meta name="description" content="Mechanical design and soil testing of a drone-carried sampler: geared actuation, auger integration, active anchors, and lightweight suspension.">
 <meta name="color-scheme" content="light">
 <title>Drone soil sampler | Mehmet Firat</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
-<script src="assets/site.js" defer>
-</script>
+<script src="assets/site.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="header-inner">
-<a class="brand" href="index.html" aria-label="Mehmet Firat home">
-<span class="brand-mark" aria-hidden="true">MF</span>Mehmet Firat</a>
+<a class="brand" href="index.html" aria-label="Mehmet Firat home"><span class="brand-mark" aria-hidden="true">MF</span>Mehmet Firat</a>
 <nav aria-label="Main navigation">
-<a href="index.html#work">Work</a>
-<a href="index.html#about">About</a>
-<a href="index.html#contact">Contact</a>
-<a href="assets/reports/mehmet-firat-resume.pdf">Resume</a>
+<a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="index.html#contact">Contact</a><a href="assets/reports/mehmet-firat-resume.pdf">Resume</a>
 </nav>
 </div>
 </header>
 <main id="main">
 <div class="case-header wrap">
 <a class="back-link" href="index.html#work">← All projects</a>
-<p class="eyebrow">Robo Lab</p>
+<p class="eyebrow">Olin Farm Robotics Lab · 2026</p>
 <h1>Drone soil sampler</h1>
-<p class="case-lead">A lightweight, drone-mounted mechanism for repeatable soil-moisture sampling.</p>
-<div class="report-links">
-<a class="text-link" href="https://drive.google.com/file/d/1CTthVP5PVVEAv-8-1UoBMjeWehAuMTm2/view?usp=sharing" target="_blank" rel="noopener noreferrer">Design sprint slides ↗</a>
-<a class="text-link" href="assets/reports/robolab-sprint-3-review.pdf">Sprint 3 review (PDF) ↓</a>
+<p class="case-lead">Getting a lightweight mechanism into the ground—and keeping it there while it drills.</p>
+<p class="status-line">Mechanical design · Prototype assembly · Bench and soil testing</p>
 </div>
-</div>
-<section class="featured-video wrap" aria-labelledby="overview-film">
-<h2 id="overview-film">HydroFleet in the field</h2>
-<p class="film-intro">Farm Robotics Challenge’s overview of the team’s drone-based soil-sampling project.</p>
-<figure class="video-card">
-<div class="video-frame" data-video="_SdpMSzPFr8" data-title="Farm Robotics Challenge: soil-sampling drone fleet">
-<button class="video-launch screenshot-poster" type="button" aria-label="Play Farm Robotics Challenge soil-sampling drone overview">
-<img src="assets/images/hydrofleet-overview-video.png" alt="Farm Robotics Challenge video showing a drone carrying a soil probe over a field" width="917" height="584" loading="eager" decoding="async" class="">
-</button>
-</div>
-<figcaption>Students Build Autonomous Soil-Sampling Drone Fleet to Help Growers · Farm Robotics Challenge <a class="text-link" href="https://www.youtube.com/watch?v=_SdpMSzPFr8" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
-</figcaption>
+<section class="project-overview wrap" aria-labelledby="assembly-heading">
+<figure class="current-cad">
+<a class="image-link" href="assets/images/hydrofleet-current-cad.png" aria-label="Enlarge the latest soil sampler CAD assembly">
+<img src="assets/images/hydrofleet-current-cad.png" alt="Soil sampler CAD showing the upper actuator and blue gear train, central auger, lead screw and guide rods, and two curved purple anchors on the base" width="744" height="913" loading="eager" decoding="async">
+</a>
+<figcaption>Latest assembly CAD. The curved anchors hold the base while the auger and probe travel into the soil.</figcaption>
 </figure>
+<div>
+<p class="eyebrow">The mechanical system</p>
+<h2 id="assembly-heading">One main drive. Two coordinated motions.</h2>
+<p>A continuous-rotation servo turns a printed gear train. It rotates the auger and moisture probe together while driving their downward travel through a lead-screw nut.</p>
+<ol class="diagram-notes">
+<li><strong>Gear train at the top.</strong> Links auger rotation to the feed mechanism.</li>
+<li><strong>Auger and probe in the center.</strong> Rotate together to avoid the interference found in early tests.</li>
+<li><strong>Fixed lead screw.</strong> A rotating nut moves the upper assembly vertically; two guide rods keep it aligned.</li>
+<li><strong>Curved anchors at the base.</strong> Enter the soil before drilling to resist twisting and uplift.</li>
+</ol>
+</div>
 </section>
 <div class="case-layout wrap">
 <aside>
 <dl class="project-facts">
-<div>
-<dt>Context</dt>
-<dd>Mechanism design · Prototyping</dd>
-</div>
-<div>
-<dt>Contribution</dt>
-<dd>Mechanical concept development, CAD, prototype building and testing.</dd>
-</div>
-<div>
-<dt>Tools & methods</dt>
-<dd>Mechanical CAD · Rapid prototyping · Mechanism design · Motors & actuation</dd>
-</div>
+<div><dt>Context</dt><dd>Drone-carried soil-moisture sampling</dd></div>
+<div><dt>My contribution</dt><dd>Mechanical design across the sampler, working with the team</dd></div>
+<div><dt>Tools &amp; methods</dt><dd>Mechanical CAD · 3D printing · Actuator selection · Prototype assembly · Soil testing</dd></div>
 </dl>
+<nav class="case-nav" aria-label="On this page">
+<span>On this page</span><a href="#my-contribution">My contribution</a><a href="#challenge">Design challenge</a><a href="#decisions">Design decisions</a><a href="#testing">Testing &amp; limits</a><a href="#design-history">Development history</a><a href="#overview-film">Team overview</a>
+</nav>
 </aside>
 <article class="case-body">
-<div class="metrics">
+<section class="case-section contribution-summary" id="my-contribution">
+<p class="eyebrow">My role</p>
+<h2>Working across the mechanical system</h2>
+<p>I worked across the sampler’s mechanical design with our team: CAD, the geared auger and lead-screw drive, active anchors, suspension, prototype assembly, and soil testing.</p>
+<p>The work was shared and iterative. We built prototypes, tested what prevented reliable insertion, and revised the mechanism around those failures. I became mechanical design co-lead in Fall 2026.</p>
+</section>
+<section class="case-section" id="challenge">
+<h2>A small payload with a difficult job</h2>
+<p>The sampler needed to reach the soil beneath a drone, establish stable ground contact, insert a moisture probe, and retract for the next sample. Adding mass could help it resist drilling forces, but every component also had to fit within the drone’s payload budget.</p>
+<p>That made the drive and anchors closely related design problems. The drive needed enough torque to cut and feed into the ground; the base needed enough grip to keep that force from lifting or twisting the whole sampler.</p>
+</section>
+<section class="case-section" id="decisions">
+<p class="eyebrow">What changed—and why</p>
+<h2>Design decisions shaped by testing</h2>
+<div class="decision-grid">
 <div>
-<strong>694 g</strong>
-<span>Sprint 3 sampler mass</span>
+<h3>Linking rotation and feed</h3>
+<p>We prototyped separate motors for auger rotation and vertical feed, then moved to a shared drive to reduce the number of motors. Printed gears let us change the relationship between rotation and travel as we tested.</p>
+<p>The tradeoff was less independent control of the two motions. The gear relationship had to let the auger clear soil as the carriage advanced.</p>
 </div>
 <div>
-<strong>5+ inches</strong>
-<span>Reported Sprint 3 travel</span>
+<h3>Letting the probe rotate</h3>
+<p>Our first arrangement kept the probe stationary inside the rotating auger. Friction and interference made it harder to clear soil, so we coupled the probe and auger to rotate together.</p>
+<p>That created a wiring problem: the sensor leads twisted with each rotation. Adding a slip ring kept the electrical connection while allowing the probe to turn.</p>
 </div>
 <div>
-<strong>6 inches</strong>
-<span>Initial target depth</span>
+<h3>Choosing anchor motors for the load</h3>
+<p>We initially used very light anchor servos to save payload mass. In soil tests, they struggled to drive the anchors into the ground.</p>
+<p>We accepted heavier servos and revised the anchor mounts. The decision balanced motor mass against the torque needed to penetrate the soil and establish a reliable hold.</p>
 </div>
+<div>
+<h3>Changing how the base grips</h3>
+<p>Passive spikes resisted twisting, but the sampler could still lift during insertion. Early powered anchors also proved too thin and unreliable.</p>
+<p>We strengthened the mounts and developed tapered, curved anchors. A pocketed base reduced material, while small base spikes helped establish initial ground contact before the anchors deployed.</p>
 </div>
-<div class="gallery cad-gallery">
-<figure class="">
-<a class="image-link" href="assets/images/robo-lab-01.jpg" aria-label="Open image: Mark 1 concept with a lead screw, servo-driven auger, and soil sensor.">
-<img src="assets/images/robo-lab-01.jpg" alt="Mark 1 concept with a lead screw, servo-driven auger, and soil sensor." width="448" height="583" class="" loading="lazy" decoding="async">
-</a>
-<figcaption>Mark 1 concept with a lead screw, servo-driven auger, and soil sensor.</figcaption>
-</figure>
-<figure class="">
-<a class="image-link" href="assets/images/robo-lab-03.jpg" aria-label="Open image: The revised sampler layout with a centered auger and anchors.">
-<img src="assets/images/robo-lab-03.jpg" alt="The revised sampler layout with a centered auger and anchors." width="337" height="398" class="" loading="lazy" decoding="async">
-</a>
-<figcaption>The revised sampler layout with a centered auger and anchors.</figcaption>
-</figure>
-</div>
-<section class="case-section ">
-<h2>The challenge</h2>
-<p>Farmers need timely soil-moisture data to make irrigation decisions, but existing sampling methods can be slow, expensive, or limited in spatial resolution. A drone-mounted system could increase coverage and sampling frequency if its probe could insert and retract reliably, survive repeated soil impacts, and remain within the drone’s payload capacity.</p>
-<p>We explored a lightweight, repeatable, and scalable sampler through design sprints, concept evaluations, and physical prototypes, with soil variability and insertion reliability shaping the design.</p>
-</section>
-<section class="case-section">
-<h2>Original sampling requirements</h2>
-<p>The requirements below guided the early concepts. They were design targets, rather than measurements demonstrated by the prototypes:</p>
-<ul>
-<li>Sample to a depth of 6 inches, with a longer-term goal of scaling to 18 inches.</li>
-<li>Keep the sampling failure rate below 5%.</li>
-<li>Operate within the drone’s payload capacity.</li>
-<li>Avoid damaging crops during insertion.</li>
-<li>Maintain moisture-measurement error within ±5% when the probe is properly inserted.</li>
-<li>Work across different soil conditions.</li>
-</ul>
-</section>
-<section class="case-section ">
-<h2>My contribution</h2>
-<p>I led mechanical concept development and CAD design, iterated the lead-screw, auger, and probe assemblies, and built and tested physical prototypes. I also evaluated trade-offs among motor choice, mass, stability, and insertion force, and contributed to sprint planning and design reviews.</p>
-</section>
-<section class="case-section ">
-<h2>From concepts to prototypes</h2>
-<figure>
-<a class="image-link" href="assets/images/work-02.jpg" aria-label="Open image: Overall sampler CAD assembly from the original portfolio.">
-<img src="assets/images/work-02.jpg" alt="CAD assembly of the soil sampler with centered auger and anchoring feet" width="536" height="402" loading="lazy" decoding="async" class="">
-</a>
-<figcaption>Overall sampler CAD assembly from the original portfolio.</figcaption>
-</figure>
-<p>We compared three approaches to inserting the probe:</p>
-<ul>
-<li><strong>Embedded drill probe:</strong> a lead screw drives a rotating auger into the soil, allowing controlled insertion and stepwise measurement. Its expected insertion reliability came with a higher mass in the concept evaluation.</li>
-<li><strong>Harpoon mechanisms:</strong> spring-loaded designs using snail or helical cams store energy and release it for rapid soil penetration. Force control and repeatability were the main challenges.</li>
-<li><strong>Sliding hammer:</strong> a gravity-assisted hammer impacts the probe into the soil. It offered a simple mechanism with minimal actuation, while alignment and repeatability were the primary concerns.</li>
-</ul>
-<p><strong>Mark 1:</strong> a stepper motor drove the lead screw and a servo drove the auger, allowing downward speed to be varied independently from auger rotation. At approximately 610 g, the prototype exposed stability and mass-distribution issues.</p>
-<p><strong>Mark 2:</strong> the motor and auger layout was rearranged for stability, the auger was centered for better alignment, and mass was reduced where possible. Anchors and a stronger probe holder were added.</p>
-</section>
-<figure class="narrow-figure">
-<a class="image-link" href="assets/images/robo-lab-02.jpg" aria-label="Open image: An intermediate CAD view of the revised motor and auger arrangement.">
-<img src="assets/images/robo-lab-02.jpg" alt="CAD model showing sampler motors, guide rails, and auger" width="383" height="487" class="" loading="lazy" decoding="async">
-</a>
-<figcaption>An intermediate CAD view of the revised motor and auger arrangement.</figcaption>
-</figure>
-<section class="case-section ">
-<h2>Early testing &amp; next steps</h2>
-<p>Both versions were physically built and tested on the bench and in soil buckets. Video-documented insertion and retraction cycles were used to examine motor torque, structural stability, and alignment. The trials exposed slippage, soil compaction, and anchoring challenges, providing feedback on insertion behavior and failure modes in real soil.</p>
-<p>The original development plan was to finalize the 6-inch probe for consistent data collection, explore alternative anchoring mechanisms, scale toward 18-inch sampling, and conduct field tests with farmers. The Sprint 3 review below provides the later integration status.</p>
-</section>
-<section class="case-section" id="sprint-3">
-<p class="eyebrow">April 10, 2026 · Team design review</p>
-<h2>Sprint 3: integrating the sampler</h2>
-<p>By Sprint 3, the team’s sampler weighed 694 g and had a reported travel of a little over 5 inches. This was mechanism travel, rather than a verified soil-sampling depth. The review brought mechanical revisions together with probe wiring, distance sensing, and drone attachment.</p>
-<ul>
-<li>
-<strong>Anchors and base:</strong> shorter, rounder anchors and a more open base layout.</li>
-<li>
-<strong>Probe and electronics:</strong> an assembled probe holder, a fully wired probe, and repackaged wiring with a slip ring.</li>
-<li>
-<strong>Suspension:</strong> attachment holes moved above the top plate to revise the drone-to-sampler connection.</li>
-<li>
-<strong>Distance measurement:</strong> an ultrasonic sensor was mounted, wired, and reported functional.</li>
-</ul>
-<div class="gallery">
-<figure>
-<a class="image-link" href="assets/images/robolab-sprint3-prototype.jpg" aria-label="Open image: The Sprint 3 sampler prototype, reported at 694 g.">
-<img src="assets/images/robolab-sprint3-prototype.jpg" alt="Assembled soil sampler with drill probe, wiring and upper suspension mounts" width="1125" height="1500" loading="lazy" decoding="async">
-</a>
-<figcaption>The Sprint 3 sampler prototype, reported at 694 g.</figcaption>
-</figure>
-<figure>
-<a class="image-link" href="assets/images/robolab-sprint3-wiring.jpg" aria-label="Open image: Repackaged electronics and probe wiring, including the slip ring.">
-<img src="assets/images/robolab-sprint3-wiring.jpg" alt="Top of the sampler showing motor, electronics boards, probe connections and wiring" width="1125" height="1500" loading="lazy" decoding="async">
-</a>
-<figcaption>Repackaged electronics and probe wiring, including the slip ring.</figcaption>
-</figure>
-<figure>
-<a class="image-link" href="assets/images/robolab-sprint3-open-base.jpg" aria-label="Open image: Revised open base with the shorter anchor layout.">
-<img src="assets/images/robolab-sprint3-open-base.jpg" alt="CAD render of an open sampler base and its curved anchor arms" width="1022" height="549" loading="lazy" decoding="async">
-</a>
-<figcaption>Revised open base with the shorter anchor layout.</figcaption>
-</figure>
-<figure>
-<a class="image-link" href="assets/images/robolab-sprint3-drone-attachment.jpg" aria-label="Open image: Attachment holes raised above the plate.">
-<img src="assets/images/robolab-sprint3-drone-attachment.jpg" alt="CAD render of the upper sampler plate with vertical drone attachment tabs" width="676" height="499" loading="lazy" decoding="async">
-</a>
-<figcaption>Attachment holes raised above the plate.</figcaption>
-</figure>
-</div>
-<h2>What testing still needed to resolve</h2>
-<p>The review identified soil-dependent anchor performance, wire tangling, and fragile base-mounted servo supports. Further testing and stronger mounts were planned. These findings kept the focus on repeatability and durability, beyond getting one successful cycle.</p>
-<p>At the wider system level, a single sampling routine could return data over CAN, but a second run could hang and distance-sensor-based control still needed testing. Separate drone flight tests demonstrated a slung load; the full-mission test shown in the review had not yet combined that load with CAN-controlled sampling. End-to-end integration remained work in progress at this review.</p>
-<p>
-<a class="text-link" href="assets/reports/robolab-sprint-3-review.pdf">Read the full Sprint 3 review (PDF) ↓</a>
-</p>
-</section>
-
-<section class="case-section ">
-<h2>Prototype videos</h2>
-<div class="gallery ">
-<figure class="video-card">
-<div class="video-frame" data-video="Do9_tr8Wu1I" data-title="Mark 1 prototype test">
-<button class="video-launch" type="button" aria-label="Play Mark 1 prototype test">
-<img src="assets/images/robo-lab-01.jpg" alt="Project preview: Mark 1 prototype test" width="448" height="583" class="" loading="lazy" decoding="async">
-<span class="play-icon" aria-hidden="true">▶</span>
-<span class="video-label">Play video</span>
-</button>
-</div>
-<figcaption>Mark 1 prototype test <a class="text-link" href="https://www.youtube.com/watch?v=Do9_tr8Wu1I" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
-</figcaption>
-</figure>
-<figure class="video-card">
-<div class="video-frame" data-video="XnAY6i8W06M" data-title="Mark 2 soil-sampler demonstration">
-<button class="video-launch" type="button" aria-label="Play Mark 2 soil-sampler demonstration">
-<img src="assets/images/robo-lab-03.jpg" alt="Project preview: Mark 2 soil-sampler demonstration" width="337" height="398" class="" loading="lazy" decoding="async">
-<span class="play-icon" aria-hidden="true">▶</span>
-<span class="video-label">Play video</span>
-</button>
-</div>
-<figcaption>Mark 2 soil-sampler demonstration <a class="text-link" href="https://www.youtube.com/watch?v=XnAY6i8W06M" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
-</figcaption>
-</figure>
-<figure class="video-card">
-<div class="video-frame" data-video="f9SXiV7TELU" data-title="Sprint 4 soil-sampler demonstration">
-<button class="video-launch" type="button" aria-label="Play Sprint 4 soil-sampler demonstration">
-<img src="assets/images/robo-lab-03.jpg" alt="Project preview: Sprint 4 soil-sampler demonstration" width="337" height="398" class="" loading="lazy" decoding="async">
-<span class="play-icon" aria-hidden="true">▶</span>
-<span class="video-label">Play video</span>
-</button>
-</div>
-<figcaption>Sprint 4 soil-sampler demonstration <a class="text-link" href="https://www.youtube.com/watch?v=f9SXiV7TELU" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
-</figcaption>
-</figure>
-<figure class="video-card">
-<div class="video-frame" data-video="K7UlFH2MuvA" data-title="Additional team prototype footage">
-<button class="video-launch" type="button" aria-label="Play Additional team prototype footage">
-<img src="assets/images/robo-lab-02.jpg" alt="Project preview: Additional team prototype footage" width="383" height="487" class="" loading="lazy" decoding="async">
-<span class="play-icon" aria-hidden="true">▶</span>
-<span class="video-label">Play video</span>
-</button>
-</div>
-<figcaption>Additional team prototype footage <a class="text-link" href="https://www.youtube.com/watch?v=K7UlFH2MuvA" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
-</figcaption>
-</figure>
 </div>
 </section>
-<section class="case-section ">
-<h2>Original soil test</h2>
+<section class="case-section" id="testing">
+<h2>Testing the whole mechanism</h2>
+<p>Bench tests helped us check the drive, alignment, and retraction. Soil tests exposed problems that free motion could not: resistance during insertion, anchor pullout, base uplift, and weak mounting points.</p>
 <figure class="local-video">
-<video controls playsinline preload="metadata" poster="assets/images/robo-lab-original-test.jpg" aria-label="Original Robo Lab soil insertion test">
+<video controls playsinline preload="metadata" poster="assets/images/robo-lab-original-test.jpg" aria-label="Early soil sampler insertion test">
 <source src="assets/videos/robo-lab-original-test.mp4" type="video/mp4">
-<a class="text-link" href="assets/videos/robo-lab-original-test.mp4">Download the soil test video</a>
+<a href="assets/videos/robo-lab-original-test.mp4">Download the soil test video</a>
 </video>
-<figcaption>Original 27-second prototype test, included with the site.</figcaption>
+<figcaption>Early prototype soil test. Physical testing guided the later drive and anchor revisions shown above.</figcaption>
+</figure>
+<h3>What remained difficult</h3>
+<p>Anchor performance depended on the soil. Dense ground could prevent full entry; loose or brittle soil could let the anchors pull out. A successful insertion in one test did not establish repeatability across those conditions.</p>
+<p>We also developed a three-point suspension with a stabilizing ring to help the sampler hang level. It improved the suspension geometry, but the hanging load could still oscillate during flight and landing.</p>
+<p>The mechanism’s ultrasonic sensor measured travel between the plates. If the base lifted, that travel would not equal actual penetration into the ground—another reason anchoring mattered to the measurement.</p>
+</section>
+<section class="case-section" id="design-history">
+<p class="eyebrow">Development history</p>
+<h2>From early concepts to an integrated prototype</h2>
+<p>The images below show earlier stages. The full assembly at the top of this page represents the later mechanical design.</p>
+<div class="gallery cad-gallery">
+<figure>
+<a class="image-link" href="assets/images/robo-lab-01.jpg" aria-label="Enlarge the early separate-motor sampler concept">
+<img src="assets/images/robo-lab-01.jpg" alt="Early sampler CAD with separate motors for auger rotation and vertical feed" width="448" height="583" loading="lazy" decoding="async">
+</a>
+<figcaption>Early concept: separate actuators allowed rotation and feed to be tested independently.</figcaption>
+</figure>
+<figure>
+<a class="image-link" href="assets/images/robolab-sprint3-prototype.jpg" aria-label="Enlarge the April 10 sampler prototype">
+<img src="assets/images/robolab-sprint3-prototype.jpg" alt="Assembled soil sampler documented in the April 10, 2026 team review" width="1125" height="1500" loading="lazy" decoding="async">
+</a>
+<figcaption>April 10, 2026 prototype: integrating the drive, probe wiring, and drone attachment.</figcaption>
+</figure>
+</div>
+<h3 id="sprint-3">A dated prototype snapshot</h3>
+<p>The April 10 review recorded a mass of 694 g and a little over 5 inches of mechanism travel. These figures describe that prototype stage; they do not establish the final design’s mass or its penetration depth in soil.</p>
+<div class="report-links">
+<a class="text-link" href="assets/reports/robolab-sprint-3-review.pdf">April design review (PDF) ↓</a>
+<a class="text-link" href="https://drive.google.com/file/d/1CTthVP5PVVEAv-8-1UoBMjeWehAuMTm2/view?usp=sharing" target="_blank" rel="noopener noreferrer">Early design sprint slides →</a>
+</div>
+<p id="prototype-videos">More team demonstrations: <a href="https://www.youtube.com/watch?v=Do9_tr8Wu1I" target="_blank" rel="noopener noreferrer">Mark 1</a>, <a href="https://www.youtube.com/watch?v=XnAY6i8W06M" target="_blank" rel="noopener noreferrer">Mark 2</a>, and <a href="https://www.youtube.com/watch?v=f9SXiV7TELU" target="_blank" rel="noopener noreferrer">Sprint 4</a>.</p>
+</section>
+<section class="case-section featured-video" aria-labelledby="overview-film">
+<p class="eyebrow">The wider team project</p>
+<h2 id="overview-film">HydroFleet in the field</h2>
+<p>Farm Robotics Challenge’s overview places the sampler in the team’s wider drone-based soil-sampling system.</p>
+<figure class="video-card">
+<div class="video-frame" data-video="_SdpMSzPFr8" data-title="Farm Robotics Challenge: soil-sampling drone fleet">
+<button class="video-launch screenshot-poster" type="button" aria-label="Play Farm Robotics Challenge soil-sampling drone overview">
+<img src="assets/images/hydrofleet-overview-video.png" alt="Drone carrying a soil probe over a field in the Farm Robotics Challenge overview" width="917" height="584" loading="lazy" decoding="async">
+</button>
+</div>
+<figcaption>Team overview · Farm Robotics Challenge. <a class="text-link" href="https://www.youtube.com/watch?v=_SdpMSzPFr8" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a></figcaption>
 </figure>
 </section>
 </article>
 </div>
-<div class="next-project wrap">
-<span>Next project</span>
-<a class="text-link" href="rocky.html">Rocky →</a>
-</div>
+<div class="next-project wrap"><span>Next project</span><a class="text-link" href="rocky.html">Rocky →</a></div>
 </main>
-<footer class="site-footer wrap">
-<span>Mehmet Firat · Mechanical engineering</span>
-<a href="#main">Back to top ↑</a>
-</footer>
+<footer class="site-footer wrap"><span>Mehmet Firat · Mechanical engineering</span><a href="#main">Back to top ↑</a></footer>
 </body>
 </html>

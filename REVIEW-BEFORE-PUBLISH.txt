@@ -1,0 +1,18 @@
+PORTFOLIO REVISION · NOVEMBER 10, 2026
+
+The updated cart and sampler case studies are ready to review locally.
+
+ALREADY INCORPORATED
+- Latest sampler and cleaning-cart CAD supplied on November 10.
+- Two selected photos of production-component fit checks in prototype supports.
+- Broad shared-team mechanical contribution confirmed by Mehmet.
+- Current sampler mechanism and design decisions from the supplied working report.
+- Cart CAD and holder prototypes completed; manufacturing handoff distinguished from a finished cart in service.
+- Scraper kept as a concise second improvement at Cibo Vita.
+
+DETAILS THAT WOULD MAKE A FUTURE UPDATE MORE SPECIFIC
+1. Project name: the working report says AerialBot; the existing team video says HydroFleet. The main page uses the neutral title “Drone soil sampler.”
+2. Final measurements: the April review records 694 g and 5+ inches of mechanism travel. The unchanged resume uses 650 g and 6 inches of insertion. The website does not combine these into a new result. Confirm later measured mass and soil depth before presenting them as final.
+3. Gear relationship: the report records 1:1:2 without a clear mapping to the motor, auger, and lead-nut gears. The page explains the linked motions without inventing a ratio convention or torque calculation.
+
+The supplied resume and older reports remain unchanged. External Google Drive links and video playback depend on the original sharing settings. The newer working report is not included in this archive.
